@@ -1,5 +1,7 @@
 # 🎞️ my-claude-animations
 
+> https://rifaterdemsahin.github.io/my-claude-animations/
+
 > Remotion bundle for the **[Claude AI Certification for Architects](https://github.com/rifaterdemsahin/claude-architect-certification)** Animation Generator. One `<Composition id="Main">` renders all 10 course-content animation types by reading `animationType` from `props` — so a single bundle renders every sentence in every style.
 
 **Live bundle (Phase 2 — deployed):** `https://dpremotionbundle.z33.web.core.windows.net/`
