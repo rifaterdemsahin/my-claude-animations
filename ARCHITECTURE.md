@@ -115,7 +115,130 @@ sequenceDiagram
 
 ---
 
-## 3. Performance: local vs RunPod
+## 3. Batch rendering — N variations from one template
+
+> *"I need 50 concept reveals — how do I create them all and get the renders
+> out?"*
+
+The mental model: **the template is fixed, the `inputProps` vary.** There is one
+`<Composition id="Main">`. You render it 50 times with 50 different prop sets and
+get 50 MP4s. You never touch `src/` to make a new variation — you only change the
+data you feed in.
+
+```mermaid
+flowchart LR
+  M["manifest.json<br/>[ {props #1}, {props #2}, … {props #50} ]"]
+  C["&lt;Composition id='Main'&gt;<br/>(unchanged)"]
+  M -->|inputProps #1| C --> O1["concept_01.mp4"]
+  M -->|inputProps #2| C --> O2["concept_02.mp4"]
+  M -->|inputProps #50| C --> O50["concept_50.mp4"]
+```
+
+### Step 1 — describe the 50 variations as data
+
+Put every variation in one **manifest** (a JSON array). Each entry is just the
+`inputProps` for one clip — same `animationType: "concept_reveal"`, different
+`title`/`subtitle`/colors. Generate it however you like (by hand, from a CSV, or
+from the Go server's `animationDefaultProps()`):
+
+```bash
+# build manifest.json with 50 concept_reveal variations
+node -e '
+  const rows = Array.from({length:50}, (_,i) => ({
+    out: `out/batch/concept_${String(i+1).padStart(2,"0")}.mp4`,
+    props: {
+      animationType: "concept_reveal",
+      title: `Concept ${i+1}`,
+      subtitle: `Module ${Math.ceil((i+1)/10)} · lesson ${i+1}`,
+      brandColor: "#8b5cf6", secondaryColor: "#3b82f6", bgColor: "#030712",
+      durationInFrames: 150
+    }
+  }));
+  require("fs").writeFileSync("manifest.json", JSON.stringify(rows, null, 2));
+  console.log("wrote", rows.length, "variations");
+'
+```
+
+### Option A — quick & simple: CLI loop (re-bundles each time)
+
+Works with zero extra code, but `remotion render` **re-bundles on every call**,
+so it's slow for 50 (you pay the bundle cost 50×):
+
+```bash
+mkdir -p out/batch
+jq -c '.[]' manifest.json | while read -r row; do
+  out=$(echo "$row" | jq -r '.out')
+  props=$(echo "$row" | jq -c '.props')
+  npx remotion render src/index.ts Main "$out" --props="$props" --log=error
+done
+```
+
+### Option B — recommended: bundle once, render many (programmatic)
+
+Bundle **one time**, reuse it for all 50 renders. This is the right way to do
+volume locally — on the M1 Max it turns ~50× ~5 s into roughly *one* bundle +
+50× the bare render. Save as `batch-render.mjs`:
+
+```js
+import { bundle } from "@remotion/bundler";
+import { selectComposition, renderMedia } from "@remotion/renderer";
+import { readFileSync } from "node:fs";
+import path from "node:path";
+
+const manifest = JSON.parse(readFileSync("manifest.json", "utf8"));
+
+// 1. bundle ONCE (the expensive step) — same artifact RunPod would use
+const serveUrl = await bundle({ entryPoint: path.resolve("src/index.ts") });
+
+// 2. render every variation against that one bundle
+for (const { out, props } of manifest) {
+  const composition = await selectComposition({
+    serveUrl, id: "Main", inputProps: props,
+  });
+  await renderMedia({
+    serveUrl, composition, codec: "h264",
+    outputLocation: out, inputProps: props,
+    // concurrency: 8,   // ← parallel frames per clip; tune to your cores
+  });
+  console.log("✓", out);
+}
+```
+
+```bash
+node batch-render.mjs      # → out/batch/concept_01.mp4 … concept_50.mp4
+```
+
+> Save `batch-render.mjs` **in the project root** (next to `package.json`) so the
+> `@remotion/*` imports resolve from this repo's `node_modules`. Verified working
+> on the M1 Max — bundles once, then renders each variation.
+
+> `renderMedia` already renders the frames of a *single* clip in parallel
+> (`concurrency`). To also run *multiple clips* at once, launch several
+> `renderMedia` calls with `Promise.all` in small groups — but watch RAM, each
+> clip is its own Chromium.
+
+### Option C — scale out: same manifest → RunPod fan-out
+
+For 50 it's borderline; for 500+ this is the move. The **manifest is identical** —
+instead of looping locally, the Go server submits one RunPod job per manifest
+entry (all sharing the published `serveUrl`), and the worker pool renders them
+in parallel. See §4–§5 for how that runs and what it costs. The key property:
+**the exact same `inputProps` produce the exact same MP4** whether Option B or C
+runs them.
+
+### Getting the renders out
+
+| Ran via | Outputs land in | Collect them by |
+|---------|-----------------|-----------------|
+| Option A / B (local) | `out/batch/*.mp4` on disk | already local — copy/upload as needed |
+| Option C (RunPod) | object storage (S3/R2/Blob) | each job returns its MP4 URL; download/sync the bucket |
+
+**Rule of thumb:** 50 concept reveals → **Option B locally** (one bundle, a few
+minutes, free). Hundreds across many types → **Option C on RunPod**.
+
+---
+
+## 4. Performance: local vs RunPod
 
 Measured baseline on this machine:
 
@@ -149,7 +272,7 @@ Takeaways:
 
 ---
 
-## 4. Cost implications
+## 5. Cost implications
 
 ### Local
 - **Marginal cost ≈ $0.** You pay only amortized hardware + electricity.
@@ -194,7 +317,7 @@ what you previewed.
 
 ---
 
-## 5. Cost-control checklist for RunPod
+## 6. Cost-control checklist for RunPod
 
 - Keep **min-workers ≥ 1** during a render session to avoid per-job cold starts;
   scale to 0 when idle.
@@ -208,7 +331,7 @@ what you previewed.
 
 ---
 
-## 6. Related
+## 7. Related
 
 - Live gallery of these samples: <https://rifaterdemsahin.github.io/my-claude-animations/>
 - Bundle deploy recipe: [`deploy-bundle.sh`](./deploy-bundle.sh)
