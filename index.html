@@ -26,6 +26,18 @@
 
   .wrap{max-width:1240px; margin:0 auto; padding:0 24px}
 
+  /* shared top nav */
+  .topnav{
+    position:sticky; top:0; z-index:50;
+    display:flex; align-items:center; gap:18px; flex-wrap:wrap;
+    padding:14px 24px; background:rgba(3,7,18,.82); backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .topnav .brand{font-weight:800; color:#fff; margin-right:auto}
+  .topnav a{color:var(--muted); font-size:14px; font-weight:600; padding:6px 4px}
+  .topnav a:hover{color:#fff; text-decoration:none}
+  .topnav a.active{color:#fff; border-bottom:2px solid var(--violet)}
+
   header{
     position:relative; overflow:hidden;
     padding:96px 24px 72px;
@@ -99,6 +111,15 @@
 </style>
 </head>
 <body>
+
+<nav class="topnav">
+  <a class="brand" href="index.html">🎬 Claude Animations</a>
+  <a href="index.html" class="active">Gallery</a>
+  <a href="batch.html">Batch · 50 Concept Reveals</a>
+  <a href="https://github.com/rifaterdemsahin/my-claude-animations/blob/main/ARCHITECTURE.md">Architecture</a>
+  <a href="https://github.com/rifaterdemsahin/my-claude-animations/blob/main/PERFORMANCE.md">Performance</a>
+  <a href="https://github.com/rifaterdemsahin/my-claude-animations">GitHub ↗</a>
+</nav>
 
 <header>
   <div class="wrap">

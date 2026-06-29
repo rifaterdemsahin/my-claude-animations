@@ -1,0 +1,802 @@
+[
+  {
+    "id": "concept_01",
+    "out": "batch/concept_reveal/concept_01.mp4",
+    "title": "Claude is an AI assistant",
+    "module": "Foundations",
+    "props": {
+      "animationType": "concept_reveal",
+      "title": "Claude is an AI assistant",
+      "subtitle": "Foundations · Concept 1 of 50",
+      "brandColor": "#8b5cf6",
+      "secondaryColor": "#3b82f6",
+      "bgColor": "#030712",
+      "durationInFrames": 150,
+      "fps": 30
+    }
+  },
+  {
+    "id": "concept_02",
+    "out": "batch/concept_reveal/concept_02.mp4",
+    "title": "Large language models predict tokens",
+    "module": "Foundations",
+    "props": {
+      "animationType": "concept_reveal",
+      "title": "Large language models predict tokens",
+      "subtitle": "Foundations · Concept 2 of 50",
+      "brandColor": "#8b5cf6",
+      "secondaryColor": "#3b82f6",
+      "bgColor": "#030712",
+      "durationInFrames": 150,
+      "fps": 30
+    }
+  },
+  {
+    "id": "concept_03",
+    "out": "batch/concept_reveal/concept_03.mp4",
+    "title": "The context window is finite",
+    "module": "Foundations",
+    "props": {
+      "animationType": "concept_reveal",
+      "title": "The context window is finite",
+      "subtitle": "Foundations · Concept 3 of 50",
+      "brandColor": "#8b5cf6",
+      "secondaryColor": "#3b82f6",
+      "bgColor": "#030712",
+      "durationInFrames": 150,
+      "fps": 30
+    }
+  },
+  {
+    "id": "concept_04",
+    "out": "batch/concept_reveal/concept_04.mp4",
+    "title": "Temperature controls randomness",
+    "module": "Foundations",
+    "props": {
+      "animationType": "concept_reveal",
+      "title": "Temperature controls randomness",
+      "subtitle": "Foundations · Concept 4 of 50",
+      "brandColor": "#8b5cf6",
+      "secondaryColor": "#3b82f6",
+      "bgColor": "#030712",
+      "durationInFrames": 150,
+      "fps": 30
+    }
+  },
+  {
+    "id": "concept_05",
+    "out": "batch/concept_reveal/concept_05.mp4",
+    "title": "System prompts set the rules",
+    "module": "Foundations",
+    "props": {
+      "animationType": "concept_reveal",
+      "title": "System prompts set the rules",
+      "subtitle": "Foundations · Concept 5 of 50",
+      "brandColor": "#8b5cf6",
+      "secondaryColor": "#3b82f6",
+      "bgColor": "#030712",
+      "durationInFrames": 150,
+      "fps": 30
+    }
+  },
+  {
+    "id": "concept_06",
+    "out": "batch/concept_reveal/concept_06.mp4",
+    "title": "Be clear and direct",
+    "module": "Prompt Engineering",
+    "props": {
+      "animationType": "concept_reveal",
+      "title": "Be clear and direct",
+      "subtitle": "Prompt Engineering · Concept 6 of 50",
+      "brandColor": "#8b5cf6",
+      "secondaryColor": "#3b82f6",
+      "bgColor": "#030712",
+      "durationInFrames": 150,
+      "fps": 30
+    }
+  },
+  {
+    "id": "concept_07",
+    "out": "batch/concept_reveal/concept_07.mp4",
+    "title": "Show, don't just tell",
+    "module": "Prompt Engineering",
+    "props": {
+      "animationType": "concept_reveal",
+      "title": "Show, don't just tell",
+      "subtitle": "Prompt Engineering · Concept 7 of 50",
+      "brandColor": "#8b5cf6",
+      "secondaryColor": "#3b82f6",
+      "bgColor": "#030712",
+      "durationInFrames": 150,
+      "fps": 30
+    }
+  },
+  {
+    "id": "concept_08",
+    "out": "batch/concept_reveal/concept_08.mp4",
+    "title": "Few-shot examples guide output",
+    "module": "Prompt Engineering",
+    "props": {
+      "animationType": "concept_reveal",
+      "title": "Few-shot examples guide output",
+      "subtitle": "Prompt Engineering · Concept 8 of 50",
+      "brandColor": "#8b5cf6",
+      "secondaryColor": "#3b82f6",
+      "bgColor": "#030712",
+      "durationInFrames": 150,
+      "fps": 30
+    }
+  },
+  {
+    "id": "concept_09",
+    "out": "batch/concept_reveal/concept_09.mp4",
+    "title": "Chain of thought improves reasoning",
+    "module": "Prompt Engineering",
+    "props": {
+      "animationType": "concept_reveal",
+      "title": "Chain of thought improves reasoning",
+      "subtitle": "Prompt Engineering · Concept 9 of 50",
+      "brandColor": "#8b5cf6",
+      "secondaryColor": "#3b82f6",
+      "bgColor": "#030712",
+      "durationInFrames": 150,
+      "fps": 30
+    }
+  },
+  {
+    "id": "concept_10",
+    "out": "batch/concept_reveal/concept_10.mp4",
+    "title": "Structure prompts with XML tags",
+    "module": "Prompt Engineering",
+    "props": {
+      "animationType": "concept_reveal",
+      "title": "Structure prompts with XML tags",
+      "subtitle": "Prompt Engineering · Concept 10 of 50",
+      "brandColor": "#8b5cf6",
+      "secondaryColor": "#3b82f6",
+      "bgColor": "#030712",
+      "durationInFrames": 150,
+      "fps": 30
+    }
+  },
+  {
+    "id": "concept_11",
+    "out": "batch/concept_reveal/concept_11.mp4",
+    "title": "Context is the model's working memory",
+    "module": "Context & Memory",
+    "props": {
+      "animationType": "concept_reveal",
+      "title": "Context is the model's working memory",
+      "subtitle": "Context & Memory · Concept 11 of 50",
+      "brandColor": "#8b5cf6",
+      "secondaryColor": "#3b82f6",
+      "bgColor": "#030712",
+      "durationInFrames": 150,
+      "fps": 30
+    }
+  },
+  {
+    "id": "concept_12",
+    "out": "batch/concept_reveal/concept_12.mp4",
+    "title": "Prompt caching cuts cost",
+    "module": "Context & Memory",
+    "props": {
+      "animationType": "concept_reveal",
+      "title": "Prompt caching cuts cost",
+      "subtitle": "Context & Memory · Concept 12 of 50",
+      "brandColor": "#8b5cf6",
+      "secondaryColor": "#3b82f6",
+      "bgColor": "#030712",
+      "durationInFrames": 150,
+      "fps": 30
+    }
+  },
+  {
+    "id": "concept_13",
+    "out": "batch/concept_reveal/concept_13.mp4",
+    "title": "Summarize to fit the window",
+    "module": "Context & Memory",
+    "props": {
+      "animationType": "concept_reveal",
+      "title": "Summarize to fit the window",
+      "subtitle": "Context & Memory · Concept 13 of 50",
+      "brandColor": "#8b5cf6",
+      "secondaryColor": "#3b82f6",
+      "bgColor": "#030712",
+      "durationInFrames": 150,
+      "fps": 30
+    }
+  },
+  {
+    "id": "concept_14",
+    "out": "batch/concept_reveal/concept_14.mp4",
+    "title": "Retrieve only what matters",
+    "module": "Context & Memory",
+    "props": {
+      "animationType": "concept_reveal",
+      "title": "Retrieve only what matters",
+      "subtitle": "Context & Memory · Concept 14 of 50",
+      "brandColor": "#8b5cf6",
+      "secondaryColor": "#3b82f6",
+      "bgColor": "#030712",
+      "durationInFrames": 150,
+      "fps": 30
+    }
+  },
+  {
+    "id": "concept_15",
+    "out": "batch/concept_reveal/concept_15.mp4",
+    "title": "Long context is not free",
+    "module": "Context & Memory",
+    "props": {
+      "animationType": "concept_reveal",
+      "title": "Long context is not free",
+      "subtitle": "Context & Memory · Concept 15 of 50",
+      "brandColor": "#8b5cf6",
+      "secondaryColor": "#3b82f6",
+      "bgColor": "#030712",
+      "durationInFrames": 150,
+      "fps": 30
+    }
+  },
+  {
+    "id": "concept_16",
+    "out": "batch/concept_reveal/concept_16.mp4",
+    "title": "Tools extend what Claude can do",
+    "module": "Tool Use & Agents",
+    "props": {
+      "animationType": "concept_reveal",
+      "title": "Tools extend what Claude can do",
+      "subtitle": "Tool Use & Agents · Concept 16 of 50",
+      "brandColor": "#8b5cf6",
+      "secondaryColor": "#3b82f6",
+      "bgColor": "#030712",
+      "durationInFrames": 150,
+      "fps": 30
+    }
+  },
+  {
+    "id": "concept_17",
+    "out": "batch/concept_reveal/concept_17.mp4",
+    "title": "Agents loop until the task is done",
+    "module": "Tool Use & Agents",
+    "props": {
+      "animationType": "concept_reveal",
+      "title": "Agents loop until the task is done",
+      "subtitle": "Tool Use & Agents · Concept 17 of 50",
+      "brandColor": "#8b5cf6",
+      "secondaryColor": "#3b82f6",
+      "bgColor": "#030712",
+      "durationInFrames": 150,
+      "fps": 30
+    }
+  },
+  {
+    "id": "concept_18",
+    "out": "batch/concept_reveal/concept_18.mp4",
+    "title": "Define tools with clear schemas",
+    "module": "Tool Use & Agents",
+    "props": {
+      "animationType": "concept_reveal",
+      "title": "Define tools with clear schemas",
+      "subtitle": "Tool Use & Agents · Concept 18 of 50",
+      "brandColor": "#8b5cf6",
+      "secondaryColor": "#3b82f6",
+      "bgColor": "#030712",
+      "durationInFrames": 150,
+      "fps": 30
+    }
+  },
+  {
+    "id": "concept_19",
+    "out": "batch/concept_reveal/concept_19.mp4",
+    "title": "The model decides when to call",
+    "module": "Tool Use & Agents",
+    "props": {
+      "animationType": "concept_reveal",
+      "title": "The model decides when to call",
+      "subtitle": "Tool Use & Agents · Concept 19 of 50",
+      "brandColor": "#8b5cf6",
+      "secondaryColor": "#3b82f6",
+      "bgColor": "#030712",
+      "durationInFrames": 150,
+      "fps": 30
+    }
+  },
+  {
+    "id": "concept_20",
+    "out": "batch/concept_reveal/concept_20.mp4",
+    "title": "Guardrails keep agents on task",
+    "module": "Tool Use & Agents",
+    "props": {
+      "animationType": "concept_reveal",
+      "title": "Guardrails keep agents on task",
+      "subtitle": "Tool Use & Agents · Concept 20 of 50",
+      "brandColor": "#8b5cf6",
+      "secondaryColor": "#3b82f6",
+      "bgColor": "#030712",
+      "durationInFrames": 150,
+      "fps": 30
+    }
+  },
+  {
+    "id": "concept_21",
+    "out": "batch/concept_reveal/concept_21.mp4",
+    "title": "Ground answers in your data",
+    "module": "RAG & Knowledge",
+    "props": {
+      "animationType": "concept_reveal",
+      "title": "Ground answers in your data",
+      "subtitle": "RAG & Knowledge · Concept 21 of 50",
+      "brandColor": "#8b5cf6",
+      "secondaryColor": "#3b82f6",
+      "bgColor": "#030712",
+      "durationInFrames": 150,
+      "fps": 30
+    }
+  },
+  {
+    "id": "concept_22",
+    "out": "batch/concept_reveal/concept_22.mp4",
+    "title": "Embeddings capture meaning",
+    "module": "RAG & Knowledge",
+    "props": {
+      "animationType": "concept_reveal",
+      "title": "Embeddings capture meaning",
+      "subtitle": "RAG & Knowledge · Concept 22 of 50",
+      "brandColor": "#8b5cf6",
+      "secondaryColor": "#3b82f6",
+      "bgColor": "#030712",
+      "durationInFrames": 150,
+      "fps": 30
+    }
+  },
+  {
+    "id": "concept_23",
+    "out": "batch/concept_reveal/concept_23.mp4",
+    "title": "Chunking shapes retrieval quality",
+    "module": "RAG & Knowledge",
+    "props": {
+      "animationType": "concept_reveal",
+      "title": "Chunking shapes retrieval quality",
+      "subtitle": "RAG & Knowledge · Concept 23 of 50",
+      "brandColor": "#8b5cf6",
+      "secondaryColor": "#3b82f6",
+      "bgColor": "#030712",
+      "durationInFrames": 150,
+      "fps": 30
+    }
+  },
+  {
+    "id": "concept_24",
+    "out": "batch/concept_reveal/concept_24.mp4",
+    "title": "Re-ranking sharpens results",
+    "module": "RAG & Knowledge",
+    "props": {
+      "animationType": "concept_reveal",
+      "title": "Re-ranking sharpens results",
+      "subtitle": "RAG & Knowledge · Concept 24 of 50",
+      "brandColor": "#8b5cf6",
+      "secondaryColor": "#3b82f6",
+      "bgColor": "#030712",
+      "durationInFrames": 150,
+      "fps": 30
+    }
+  },
+  {
+    "id": "concept_25",
+    "out": "batch/concept_reveal/concept_25.mp4",
+    "title": "Cite sources for trust",
+    "module": "RAG & Knowledge",
+    "props": {
+      "animationType": "concept_reveal",
+      "title": "Cite sources for trust",
+      "subtitle": "RAG & Knowledge · Concept 25 of 50",
+      "brandColor": "#8b5cf6",
+      "secondaryColor": "#3b82f6",
+      "bgColor": "#030712",
+      "durationInFrames": 150,
+      "fps": 30
+    }
+  },
+  {
+    "id": "concept_26",
+    "out": "batch/concept_reveal/concept_26.mp4",
+    "title": "Orchestrate with a router",
+    "module": "Architecture Patterns",
+    "props": {
+      "animationType": "concept_reveal",
+      "title": "Orchestrate with a router",
+      "subtitle": "Architecture Patterns · Concept 26 of 50",
+      "brandColor": "#8b5cf6",
+      "secondaryColor": "#3b82f6",
+      "bgColor": "#030712",
+      "durationInFrames": 150,
+      "fps": 30
+    }
+  },
+  {
+    "id": "concept_27",
+    "out": "batch/concept_reveal/concept_27.mp4",
+    "title": "Decompose hard problems",
+    "module": "Architecture Patterns",
+    "props": {
+      "animationType": "concept_reveal",
+      "title": "Decompose hard problems",
+      "subtitle": "Architecture Patterns · Concept 27 of 50",
+      "brandColor": "#8b5cf6",
+      "secondaryColor": "#3b82f6",
+      "bgColor": "#030712",
+      "durationInFrames": 150,
+      "fps": 30
+    }
+  },
+  {
+    "id": "concept_28",
+    "out": "batch/concept_reveal/concept_28.mp4",
+    "title": "Parallelize independent work",
+    "module": "Architecture Patterns",
+    "props": {
+      "animationType": "concept_reveal",
+      "title": "Parallelize independent work",
+      "subtitle": "Architecture Patterns · Concept 28 of 50",
+      "brandColor": "#8b5cf6",
+      "secondaryColor": "#3b82f6",
+      "bgColor": "#030712",
+      "durationInFrames": 150,
+      "fps": 30
+    }
+  },
+  {
+    "id": "concept_29",
+    "out": "batch/concept_reveal/concept_29.mp4",
+    "title": "Evaluator and optimizer loops",
+    "module": "Architecture Patterns",
+    "props": {
+      "animationType": "concept_reveal",
+      "title": "Evaluator and optimizer loops",
+      "subtitle": "Architecture Patterns · Concept 29 of 50",
+      "brandColor": "#8b5cf6",
+      "secondaryColor": "#3b82f6",
+      "bgColor": "#030712",
+      "durationInFrames": 150,
+      "fps": 30
+    }
+  },
+  {
+    "id": "concept_30",
+    "out": "batch/concept_reveal/concept_30.mp4",
+    "title": "Keep humans in the loop",
+    "module": "Architecture Patterns",
+    "props": {
+      "animationType": "concept_reveal",
+      "title": "Keep humans in the loop",
+      "subtitle": "Architecture Patterns · Concept 30 of 50",
+      "brandColor": "#8b5cf6",
+      "secondaryColor": "#3b82f6",
+      "bgColor": "#030712",
+      "durationInFrames": 150,
+      "fps": 30
+    }
+  },
+  {
+    "id": "concept_31",
+    "out": "batch/concept_reveal/concept_31.mp4",
+    "title": "Measure what you want to improve",
+    "module": "Evaluation",
+    "props": {
+      "animationType": "concept_reveal",
+      "title": "Measure what you want to improve",
+      "subtitle": "Evaluation · Concept 31 of 50",
+      "brandColor": "#8b5cf6",
+      "secondaryColor": "#3b82f6",
+      "bgColor": "#030712",
+      "durationInFrames": 150,
+      "fps": 30
+    }
+  },
+  {
+    "id": "concept_32",
+    "out": "batch/concept_reveal/concept_32.mp4",
+    "title": "Build a golden dataset",
+    "module": "Evaluation",
+    "props": {
+      "animationType": "concept_reveal",
+      "title": "Build a golden dataset",
+      "subtitle": "Evaluation · Concept 32 of 50",
+      "brandColor": "#8b5cf6",
+      "secondaryColor": "#3b82f6",
+      "bgColor": "#030712",
+      "durationInFrames": 150,
+      "fps": 30
+    }
+  },
+  {
+    "id": "concept_33",
+    "out": "batch/concept_reveal/concept_33.mp4",
+    "title": "LLMs can grade LLMs",
+    "module": "Evaluation",
+    "props": {
+      "animationType": "concept_reveal",
+      "title": "LLMs can grade LLMs",
+      "subtitle": "Evaluation · Concept 33 of 50",
+      "brandColor": "#8b5cf6",
+      "secondaryColor": "#3b82f6",
+      "bgColor": "#030712",
+      "durationInFrames": 150,
+      "fps": 30
+    }
+  },
+  {
+    "id": "concept_34",
+    "out": "batch/concept_reveal/concept_34.mp4",
+    "title": "Track regressions over time",
+    "module": "Evaluation",
+    "props": {
+      "animationType": "concept_reveal",
+      "title": "Track regressions over time",
+      "subtitle": "Evaluation · Concept 34 of 50",
+      "brandColor": "#8b5cf6",
+      "secondaryColor": "#3b82f6",
+      "bgColor": "#030712",
+      "durationInFrames": 150,
+      "fps": 30
+    }
+  },
+  {
+    "id": "concept_35",
+    "out": "batch/concept_reveal/concept_35.mp4",
+    "title": "Test the edge cases",
+    "module": "Evaluation",
+    "props": {
+      "animationType": "concept_reveal",
+      "title": "Test the edge cases",
+      "subtitle": "Evaluation · Concept 35 of 50",
+      "brandColor": "#8b5cf6",
+      "secondaryColor": "#3b82f6",
+      "bgColor": "#030712",
+      "durationInFrames": 150,
+      "fps": 30
+    }
+  },
+  {
+    "id": "concept_36",
+    "out": "batch/concept_reveal/concept_36.mp4",
+    "title": "Safety is a design requirement",
+    "module": "Safety & Governance",
+    "props": {
+      "animationType": "concept_reveal",
+      "title": "Safety is a design requirement",
+      "subtitle": "Safety & Governance · Concept 36 of 50",
+      "brandColor": "#8b5cf6",
+      "secondaryColor": "#3b82f6",
+      "bgColor": "#030712",
+      "durationInFrames": 150,
+      "fps": 30
+    }
+  },
+  {
+    "id": "concept_37",
+    "out": "batch/concept_reveal/concept_37.mp4",
+    "title": "Validate every input",
+    "module": "Safety & Governance",
+    "props": {
+      "animationType": "concept_reveal",
+      "title": "Validate every input",
+      "subtitle": "Safety & Governance · Concept 37 of 50",
+      "brandColor": "#8b5cf6",
+      "secondaryColor": "#3b82f6",
+      "bgColor": "#030712",
+      "durationInFrames": 150,
+      "fps": 30
+    }
+  },
+  {
+    "id": "concept_38",
+    "out": "batch/concept_reveal/concept_38.mp4",
+    "title": "Never trust tool output blindly",
+    "module": "Safety & Governance",
+    "props": {
+      "animationType": "concept_reveal",
+      "title": "Never trust tool output blindly",
+      "subtitle": "Safety & Governance · Concept 38 of 50",
+      "brandColor": "#8b5cf6",
+      "secondaryColor": "#3b82f6",
+      "bgColor": "#030712",
+      "durationInFrames": 150,
+      "fps": 30
+    }
+  },
+  {
+    "id": "concept_39",
+    "out": "batch/concept_reveal/concept_39.mp4",
+    "title": "Log decisions for audit",
+    "module": "Safety & Governance",
+    "props": {
+      "animationType": "concept_reveal",
+      "title": "Log decisions for audit",
+      "subtitle": "Safety & Governance · Concept 39 of 50",
+      "brandColor": "#8b5cf6",
+      "secondaryColor": "#3b82f6",
+      "bgColor": "#030712",
+      "durationInFrames": 150,
+      "fps": 30
+    }
+  },
+  {
+    "id": "concept_40",
+    "out": "batch/concept_reveal/concept_40.mp4",
+    "title": "Least privilege by default",
+    "module": "Safety & Governance",
+    "props": {
+      "animationType": "concept_reveal",
+      "title": "Least privilege by default",
+      "subtitle": "Safety & Governance · Concept 40 of 50",
+      "brandColor": "#8b5cf6",
+      "secondaryColor": "#3b82f6",
+      "bgColor": "#030712",
+      "durationInFrames": 150,
+      "fps": 30
+    }
+  },
+  {
+    "id": "concept_41",
+    "out": "batch/concept_reveal/concept_41.mp4",
+    "title": "Stream responses for speed",
+    "module": "Production & Ops",
+    "props": {
+      "animationType": "concept_reveal",
+      "title": "Stream responses for speed",
+      "subtitle": "Production & Ops · Concept 41 of 50",
+      "brandColor": "#8b5cf6",
+      "secondaryColor": "#3b82f6",
+      "bgColor": "#030712",
+      "durationInFrames": 150,
+      "fps": 30
+    }
+  },
+  {
+    "id": "concept_42",
+    "out": "batch/concept_reveal/concept_42.mp4",
+    "title": "Handle failures gracefully",
+    "module": "Production & Ops",
+    "props": {
+      "animationType": "concept_reveal",
+      "title": "Handle failures gracefully",
+      "subtitle": "Production & Ops · Concept 42 of 50",
+      "brandColor": "#8b5cf6",
+      "secondaryColor": "#3b82f6",
+      "bgColor": "#030712",
+      "durationInFrames": 150,
+      "fps": 30
+    }
+  },
+  {
+    "id": "concept_43",
+    "out": "batch/concept_reveal/concept_43.mp4",
+    "title": "Rate limits are real",
+    "module": "Production & Ops",
+    "props": {
+      "animationType": "concept_reveal",
+      "title": "Rate limits are real",
+      "subtitle": "Production & Ops · Concept 43 of 50",
+      "brandColor": "#8b5cf6",
+      "secondaryColor": "#3b82f6",
+      "bgColor": "#030712",
+      "durationInFrames": 150,
+      "fps": 30
+    }
+  },
+  {
+    "id": "concept_44",
+    "out": "batch/concept_reveal/concept_44.mp4",
+    "title": "Observe latency and tokens",
+    "module": "Production & Ops",
+    "props": {
+      "animationType": "concept_reveal",
+      "title": "Observe latency and tokens",
+      "subtitle": "Production & Ops · Concept 44 of 50",
+      "brandColor": "#8b5cf6",
+      "secondaryColor": "#3b82f6",
+      "bgColor": "#030712",
+      "durationInFrames": 150,
+      "fps": 30
+    }
+  },
+  {
+    "id": "concept_45",
+    "out": "batch/concept_reveal/concept_45.mp4",
+    "title": "Version your prompts",
+    "module": "Production & Ops",
+    "props": {
+      "animationType": "concept_reveal",
+      "title": "Version your prompts",
+      "subtitle": "Production & Ops · Concept 45 of 50",
+      "brandColor": "#8b5cf6",
+      "secondaryColor": "#3b82f6",
+      "bgColor": "#030712",
+      "durationInFrames": 150,
+      "fps": 30
+    }
+  },
+  {
+    "id": "concept_46",
+    "out": "batch/concept_reveal/concept_46.mp4",
+    "title": "Pick the right model for the job",
+    "module": "Cost & Scaling",
+    "props": {
+      "animationType": "concept_reveal",
+      "title": "Pick the right model for the job",
+      "subtitle": "Cost & Scaling · Concept 46 of 50",
+      "brandColor": "#8b5cf6",
+      "secondaryColor": "#3b82f6",
+      "bgColor": "#030712",
+      "durationInFrames": 150,
+      "fps": 30
+    }
+  },
+  {
+    "id": "concept_47",
+    "out": "batch/concept_reveal/concept_47.mp4",
+    "title": "Cache to cut token spend",
+    "module": "Cost & Scaling",
+    "props": {
+      "animationType": "concept_reveal",
+      "title": "Cache to cut token spend",
+      "subtitle": "Cost & Scaling · Concept 47 of 50",
+      "brandColor": "#8b5cf6",
+      "secondaryColor": "#3b82f6",
+      "bgColor": "#030712",
+      "durationInFrames": 150,
+      "fps": 30
+    }
+  },
+  {
+    "id": "concept_48",
+    "out": "batch/concept_reveal/concept_48.mp4",
+    "title": "Batch when latency allows",
+    "module": "Cost & Scaling",
+    "props": {
+      "animationType": "concept_reveal",
+      "title": "Batch when latency allows",
+      "subtitle": "Cost & Scaling · Concept 48 of 50",
+      "brandColor": "#8b5cf6",
+      "secondaryColor": "#3b82f6",
+      "bgColor": "#030712",
+      "durationInFrames": 150,
+      "fps": 30
+    }
+  },
+  {
+    "id": "concept_49",
+    "out": "batch/concept_reveal/concept_49.mp4",
+    "title": "Smaller models for simple tasks",
+    "module": "Cost & Scaling",
+    "props": {
+      "animationType": "concept_reveal",
+      "title": "Smaller models for simple tasks",
+      "subtitle": "Cost & Scaling · Concept 49 of 50",
+      "brandColor": "#8b5cf6",
+      "secondaryColor": "#3b82f6",
+      "bgColor": "#030712",
+      "durationInFrames": 150,
+      "fps": 30
+    }
+  },
+  {
+    "id": "concept_50",
+    "out": "batch/concept_reveal/concept_50.mp4",
+    "title": "Scale horizontally, not just up",
+    "module": "Cost & Scaling",
+    "props": {
+      "animationType": "concept_reveal",
+      "title": "Scale horizontally, not just up",
+      "subtitle": "Cost & Scaling · Concept 50 of 50",
+      "brandColor": "#8b5cf6",
+      "secondaryColor": "#3b82f6",
+      "bgColor": "#030712",
+      "durationInFrames": 150,
+      "fps": 30
+    }
+  }
+]

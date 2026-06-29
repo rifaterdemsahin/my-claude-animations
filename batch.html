@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Batch · 50 Concept Reveals · Claude AI Architect</title>
+<meta name="description" content="50 concept_reveal animations rendered locally for the Claude AI Architect course from one Remotion composition — bundled once, rendered in ~3 minutes on an M1 Max." />
+<meta property="og:title" content="Batch · 50 Concept Reveals" />
+<meta property="og:description" content="50 variations of one template, rendered locally in ~3 minutes." />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎬</text></svg>" />
+<style>
+  :root{
+    --bg:#030712; --panel:#0b1220; --panel-2:#111827;
+    --violet:#8b5cf6; --blue:#3b82f6; --ink:#e5e7eb; --muted:#9ca3af;
+    --line:rgba(139,92,246,.18);
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0; background:var(--bg); color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif; -webkit-font-smoothing:antialiased;}
+  a{color:var(--violet); text-decoration:none}
+  a:hover{text-decoration:underline}
+  .wrap{max-width:1240px; margin:0 auto; padding:0 24px}
+
+  .topnav{position:sticky; top:0; z-index:50; display:flex; align-items:center; gap:18px; flex-wrap:wrap;
+    padding:14px 24px; background:rgba(3,7,18,.82); backdrop-filter:blur(10px); border-bottom:1px solid var(--line);}
+  .topnav .brand{font-weight:800; color:#fff; margin-right:auto}
+  .topnav a{color:var(--muted); font-size:14px; font-weight:600; padding:6px 4px}
+  .topnav a:hover{color:#fff; text-decoration:none}
+  .topnav a.active{color:#fff; border-bottom:2px solid var(--violet)}
+
+  header{position:relative; overflow:hidden; padding:72px 24px 56px; text-align:center;
+    background:radial-gradient(900px 420px at 50% -120px, rgba(139,92,246,.30), transparent 70%),
+      radial-gradient(700px 360px at 85% 0, rgba(59,130,246,.20), transparent 70%);
+    border-bottom:1px solid var(--line);}
+  .eyebrow{display:inline-block; font-size:13px; letter-spacing:.18em; text-transform:uppercase; color:var(--muted);
+    border:1px solid var(--line); padding:6px 14px; border-radius:999px; margin-bottom:20px;}
+  h1{margin:0; font-size:clamp(34px,5.5vw,64px); line-height:1.04; font-weight:800;
+    background:linear-gradient(120deg,var(--violet),var(--blue)); -webkit-background-clip:text; background-clip:text; color:transparent;}
+  .lede{max-width:720px; margin:20px auto 0; font-size:clamp(15px,2vw,19px); color:var(--muted); line-height:1.6}
+  code{background:var(--panel-2); padding:2px 7px; border-radius:6px; font-size:13px; color:#c4b5fd}
+
+  /* perf banner */
+  .perf{display:grid; gap:16px; grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+    max-width:980px; margin:34px auto 0;}
+  .perf .m{background:linear-gradient(180deg,var(--panel),var(--panel-2)); border:1px solid var(--line);
+    border-radius:14px; padding:18px 16px;}
+  .perf .m b{display:block; font-size:26px; font-weight:800; color:#fff}
+  .perf .m span{font-size:12px; color:var(--muted); letter-spacing:.04em}
+  .perf-link{margin-top:18px; font-size:14px}
+
+  section{padding:48px 0 24px}
+  .modhead{display:flex; align-items:baseline; gap:12px; margin:34px 0 18px; padding-bottom:10px; border-bottom:1px solid var(--line)}
+  .modhead h2{margin:0; font-size:22px; font-weight:800}
+  .modhead span{color:var(--muted); font-size:13px}
+
+  .grid{display:grid; gap:18px; grid-template-columns:repeat(auto-fill, minmax(280px, 1fr));}
+  .card{background:linear-gradient(180deg,var(--panel),var(--panel-2)); border:1px solid var(--line);
+    border-radius:16px; overflow:hidden; transition:.18s ease; display:flex; flex-direction:column;}
+  .card:hover{transform:translateY(-3px); border-color:var(--violet); box-shadow:0 16px 36px -20px rgba(139,92,246,.6)}
+  .frame{position:relative; aspect-ratio:16/9; background:#000; cursor:pointer}
+  .frame video{width:100%; height:100%; display:block; object-fit:cover}
+  .num{position:absolute; top:10px; left:10px; z-index:2; font-size:11px; font-weight:700;
+    padding:4px 9px; border-radius:7px; color:#fff; background:rgba(3,7,18,.7); border:1px solid var(--line); backdrop-filter:blur(6px);}
+  .play{position:absolute; inset:0; display:flex; align-items:center; justify-content:center; z-index:1; pointer-events:none; transition:opacity .2s;}
+  .play svg{width:54px; height:54px; filter:drop-shadow(0 6px 18px rgba(0,0,0,.6))}
+  .frame.playing .play{opacity:0}
+  .meta{padding:14px 16px 16px}
+  .meta h3{margin:0; font-size:16px; font-weight:700; line-height:1.3}
+
+  footer{border-top:1px solid var(--line); margin-top:56px; padding:42px 24px 64px; text-align:center; color:var(--muted); font-size:14px}
+  footer .links{display:flex; gap:22px; justify-content:center; flex-wrap:wrap; margin-bottom:16px}
+  .err{max-width:700px; margin:40px auto; padding:18px; border:1px solid var(--line); border-radius:12px; color:var(--muted)}
+</style>
+</head>
+<body>
+
+<nav class="topnav">
+  <a class="brand" href="index.html">🎬 Claude Animations</a>
+  <a href="index.html">Gallery</a>
+  <a href="batch.html" class="active">Batch · 50 Concept Reveals</a>
+  <a href="https://github.com/rifaterdemsahin/my-claude-animations/blob/main/ARCHITECTURE.md">Architecture</a>
+  <a href="https://github.com/rifaterdemsahin/my-claude-animations/blob/main/PERFORMANCE.md">Performance</a>
+  <a href="https://github.com/rifaterdemsahin/my-claude-animations">GitHub ↗</a>
+</nav>
+
+<header>
+  <div class="wrap">
+    <span class="eyebrow">Claude AI Architect · Local Batch</span>
+    <h1>50 Concept Reveals</h1>
+    <p class="lede">Fifty <code>concept_reveal</code> clips for the course — every one rendered from the
+    <em>same</em> <code>&lt;Composition&gt;</code>, varying only <code>inputProps</code>.
+    Bundled once, rendered locally on an Apple M1 Max.</p>
+
+    <div class="perf">
+      <div class="m"><b>50</b><span>CLIPS</span></div>
+      <div class="m"><b>181.7s</b><span>TOTAL WALL · ~3 MIN</span></div>
+      <div class="m"><b>3.62s</b><span>PER CLIP</span></div>
+      <div class="m"><b>66.5B</b><span>CPU CYCLES</span></div>
+      <div class="m"><b>743 MB</b><span>PEAK RAM</span></div>
+      <div class="m"><b>26 MB</b><span>OUTPUT</span></div>
+    </div>
+    <div class="perf-link">
+      Full breakdown → <a href="https://github.com/rifaterdemsahin/my-claude-animations/blob/main/PERFORMANCE.md">PERFORMANCE.md</a>
+    </div>
+  </div>
+</header>
+
+<section class="wrap" id="grid">
+  <div class="err" id="status">Loading the 50 clips…</div>
+</section>
+
+<footer>
+  <div class="links">
+    <a href="index.html">All 10 templates</a>
+    <a href="https://github.com/rifaterdemsahin/my-claude-animations/blob/main/batch/manifest.json">manifest.json</a>
+    <a href="https://github.com/rifaterdemsahin/my-claude-animations/blob/main/batch-render.mjs">batch-render.mjs</a>
+    <a href="https://www.remotion.dev/">Built with Remotion</a>
+  </div>
+  <div>One template · 50 variations · rendered locally · <code>animationType: "concept_reveal"</code></div>
+</footer>
+
+<script>
+const PLAY_SVG = `<svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="rgba(139,92,246,.92)"/><path d="M10 8.5l6 3.5-6 3.5z" fill="#fff"/></svg>`;
+
+function wireCard(frame){
+  const video = frame.querySelector("video");
+  const play = ()=>{ frame.classList.add("playing"); video.play().catch(()=>{}); };
+  const stop = ()=>{ frame.classList.remove("playing"); video.pause(); };
+  frame.addEventListener("mouseenter", play);
+  frame.addEventListener("mouseleave", stop);
+  frame.addEventListener("click", ()=> frame.classList.contains("playing") ? stop() : play());
+}
+
+(async function(){
+  const root = document.getElementById("grid");
+  const status = document.getElementById("status");
+  let rows;
+  try {
+    const res = await fetch("batch/manifest.json", { cache: "no-cache" });
+    if(!res.ok) throw new Error("HTTP "+res.status);
+    rows = await res.json();
+  } catch(e){
+    status.textContent = "Couldn't load batch/manifest.json ("+e.message+"). Serve this page over HTTP (e.g. python3 -m http.server) — file:// blocks fetch.";
+    return;
+  }
+  status.remove();
+
+  // group by module, preserving manifest order
+  const groups = [];
+  const byMod = new Map();
+  rows.forEach((r, i)=>{
+    const key = r.module || "Concepts";
+    if(!byMod.has(key)){ byMod.set(key, []); groups.push(key); }
+    byMod.get(key).push({ ...r, n: i+1 });
+  });
+
+  groups.forEach(mod=>{
+    const items = byMod.get(mod);
+    const head = document.createElement("div");
+    head.className = "modhead";
+    head.innerHTML = `<h2>${mod}</h2><span>${items.length} concept${items.length>1?"s":""}</span>`;
+    root.appendChild(head);
+
+    const grid = document.createElement("div");
+    grid.className = "grid";
+    items.forEach(it=>{
+      const card = document.createElement("article");
+      card.className = "card";
+      const poster = `batch/concept_reveal/posters/${it.id}.jpg`;
+      const mp4 = it.out; // e.g. batch/concept_reveal/concept_01.mp4
+      card.innerHTML = `
+        <div class="frame">
+          <span class="num">#${String(it.n).padStart(2,"0")}</span>
+          <video preload="none" muted loop playsinline poster="${poster}">
+            <source src="${mp4}" type="video/mp4" />
+          </video>
+          <div class="play">${PLAY_SVG}</div>
+        </div>
+        <div class="meta"><h3>${it.title}</h3></div>`;
+      grid.appendChild(card);
+      wireCard(card.querySelector(".frame"));
+    });
+    root.appendChild(grid);
+  });
+})();
+</script>
+</body>
+</html>
