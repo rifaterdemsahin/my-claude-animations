@@ -13,6 +13,8 @@
 **How we got RunPod working, step by step (build log):** see [`RUNPOD_WALKTHROUGH.md`](./RUNPOD_WALKTHROUGH.md)
 **Add/update an animation type or bump Remotion (maintainer guide):** see [`DEVELOPING.md`](./DEVELOPING.md)
 **Change history with the exact steps taken (worked examples):** see [`UPDATE_LOG.md`](./UPDATE_LOG.md)
+**RunPod expected cost (model + batch estimates):** see [`RUNPOD_COST.md`](./RUNPOD_COST.md)
+**📖 Browse all docs in-browser:** [`markdown_renderer.html`](https://rifaterdemsahin.github.io/my-claude-animations/markdown_renderer.html)
 
 ---
 
