@@ -1,0 +1,802 @@
+[
+  {
+    "id": "mcp_01",
+    "out": "mcp_01.mp4",
+    "title": "MCP is an open protocol",
+    "module": "MCP Foundations",
+    "props": {
+      "animationType": "concept_reveal",
+      "title": "MCP is an open protocol",
+      "subtitle": "MCP · MCP Foundations · 1 of 50",
+      "brandColor": "#8b5cf6",
+      "secondaryColor": "#3b82f6",
+      "bgColor": "#030712",
+      "durationInFrames": 150,
+      "fps": 30
+    }
+  },
+  {
+    "id": "mcp_02",
+    "out": "mcp_02.mp4",
+    "title": "One protocol, many integrations",
+    "module": "MCP Foundations",
+    "props": {
+      "animationType": "concept_reveal",
+      "title": "One protocol, many integrations",
+      "subtitle": "MCP · MCP Foundations · 2 of 50",
+      "brandColor": "#8b5cf6",
+      "secondaryColor": "#3b82f6",
+      "bgColor": "#030712",
+      "durationInFrames": 150,
+      "fps": 30
+    }
+  },
+  {
+    "id": "mcp_03",
+    "out": "mcp_03.mp4",
+    "title": "MCP connects models to context",
+    "module": "MCP Foundations",
+    "props": {
+      "animationType": "concept_reveal",
+      "title": "MCP connects models to context",
+      "subtitle": "MCP · MCP Foundations · 3 of 50",
+      "brandColor": "#8b5cf6",
+      "secondaryColor": "#3b82f6",
+      "bgColor": "#030712",
+      "durationInFrames": 150,
+      "fps": 30
+    }
+  },
+  {
+    "id": "mcp_04",
+    "out": "mcp_04.mp4",
+    "title": "Think USB-C for AI apps",
+    "module": "MCP Foundations",
+    "props": {
+      "animationType": "concept_reveal",
+      "title": "Think USB-C for AI apps",
+      "subtitle": "MCP · MCP Foundations · 4 of 50",
+      "brandColor": "#8b5cf6",
+      "secondaryColor": "#3b82f6",
+      "bgColor": "#030712",
+      "durationInFrames": 150,
+      "fps": 30
+    }
+  },
+  {
+    "id": "mcp_05",
+    "out": "mcp_05.mp4",
+    "title": "Born at Anthropic, now open",
+    "module": "MCP Foundations",
+    "props": {
+      "animationType": "concept_reveal",
+      "title": "Born at Anthropic, now open",
+      "subtitle": "MCP · MCP Foundations · 5 of 50",
+      "brandColor": "#8b5cf6",
+      "secondaryColor": "#3b82f6",
+      "bgColor": "#030712",
+      "durationInFrames": 150,
+      "fps": 30
+    }
+  },
+  {
+    "id": "mcp_06",
+    "out": "mcp_06.mp4",
+    "title": "Hosts, clients, and servers",
+    "module": "Architecture",
+    "props": {
+      "animationType": "concept_reveal",
+      "title": "Hosts, clients, and servers",
+      "subtitle": "MCP · Architecture · 6 of 50",
+      "brandColor": "#8b5cf6",
+      "secondaryColor": "#3b82f6",
+      "bgColor": "#030712",
+      "durationInFrames": 150,
+      "fps": 30
+    }
+  },
+  {
+    "id": "mcp_07",
+    "out": "mcp_07.mp4",
+    "title": "The host runs the LLM app",
+    "module": "Architecture",
+    "props": {
+      "animationType": "concept_reveal",
+      "title": "The host runs the LLM app",
+      "subtitle": "MCP · Architecture · 7 of 50",
+      "brandColor": "#8b5cf6",
+      "secondaryColor": "#3b82f6",
+      "bgColor": "#030712",
+      "durationInFrames": 150,
+      "fps": 30
+    }
+  },
+  {
+    "id": "mcp_08",
+    "out": "mcp_08.mp4",
+    "title": "One client per server connection",
+    "module": "Architecture",
+    "props": {
+      "animationType": "concept_reveal",
+      "title": "One client per server connection",
+      "subtitle": "MCP · Architecture · 8 of 50",
+      "brandColor": "#8b5cf6",
+      "secondaryColor": "#3b82f6",
+      "bgColor": "#030712",
+      "durationInFrames": 150,
+      "fps": 30
+    }
+  },
+  {
+    "id": "mcp_09",
+    "out": "mcp_09.mp4",
+    "title": "Servers expose capabilities",
+    "module": "Architecture",
+    "props": {
+      "animationType": "concept_reveal",
+      "title": "Servers expose capabilities",
+      "subtitle": "MCP · Architecture · 9 of 50",
+      "brandColor": "#8b5cf6",
+      "secondaryColor": "#3b82f6",
+      "bgColor": "#030712",
+      "durationInFrames": 150,
+      "fps": 30
+    }
+  },
+  {
+    "id": "mcp_10",
+    "out": "mcp_10.mp4",
+    "title": "Transport carries the messages",
+    "module": "Architecture",
+    "props": {
+      "animationType": "concept_reveal",
+      "title": "Transport carries the messages",
+      "subtitle": "MCP · Architecture · 10 of 50",
+      "brandColor": "#8b5cf6",
+      "secondaryColor": "#3b82f6",
+      "bgColor": "#030712",
+      "durationInFrames": 150,
+      "fps": 30
+    }
+  },
+  {
+    "id": "mcp_11",
+    "out": "mcp_11.mp4",
+    "title": "Tools are model-callable functions",
+    "module": "Primitives",
+    "props": {
+      "animationType": "concept_reveal",
+      "title": "Tools are model-callable functions",
+      "subtitle": "MCP · Primitives · 11 of 50",
+      "brandColor": "#8b5cf6",
+      "secondaryColor": "#3b82f6",
+      "bgColor": "#030712",
+      "durationInFrames": 150,
+      "fps": 30
+    }
+  },
+  {
+    "id": "mcp_12",
+    "out": "mcp_12.mp4",
+    "title": "Resources are readable context",
+    "module": "Primitives",
+    "props": {
+      "animationType": "concept_reveal",
+      "title": "Resources are readable context",
+      "subtitle": "MCP · Primitives · 12 of 50",
+      "brandColor": "#8b5cf6",
+      "secondaryColor": "#3b82f6",
+      "bgColor": "#030712",
+      "durationInFrames": 150,
+      "fps": 30
+    }
+  },
+  {
+    "id": "mcp_13",
+    "out": "mcp_13.mp4",
+    "title": "Prompts are reusable templates",
+    "module": "Primitives",
+    "props": {
+      "animationType": "concept_reveal",
+      "title": "Prompts are reusable templates",
+      "subtitle": "MCP · Primitives · 13 of 50",
+      "brandColor": "#8b5cf6",
+      "secondaryColor": "#3b82f6",
+      "bgColor": "#030712",
+      "durationInFrames": 150,
+      "fps": 30
+    }
+  },
+  {
+    "id": "mcp_14",
+    "out": "mcp_14.mp4",
+    "title": "Sampling lets servers ask the model",
+    "module": "Primitives",
+    "props": {
+      "animationType": "concept_reveal",
+      "title": "Sampling lets servers ask the model",
+      "subtitle": "MCP · Primitives · 14 of 50",
+      "brandColor": "#8b5cf6",
+      "secondaryColor": "#3b82f6",
+      "bgColor": "#030712",
+      "durationInFrames": 150,
+      "fps": 30
+    }
+  },
+  {
+    "id": "mcp_15",
+    "out": "mcp_15.mp4",
+    "title": "Roots scope the file access",
+    "module": "Primitives",
+    "props": {
+      "animationType": "concept_reveal",
+      "title": "Roots scope the file access",
+      "subtitle": "MCP · Primitives · 15 of 50",
+      "brandColor": "#8b5cf6",
+      "secondaryColor": "#3b82f6",
+      "bgColor": "#030712",
+      "durationInFrames": 150,
+      "fps": 30
+    }
+  },
+  {
+    "id": "mcp_16",
+    "out": "mcp_16.mp4",
+    "title": "JSON-RPC under the hood",
+    "module": "Messaging",
+    "props": {
+      "animationType": "concept_reveal",
+      "title": "JSON-RPC under the hood",
+      "subtitle": "MCP · Messaging · 16 of 50",
+      "brandColor": "#8b5cf6",
+      "secondaryColor": "#3b82f6",
+      "bgColor": "#030712",
+      "durationInFrames": 150,
+      "fps": 30
+    }
+  },
+  {
+    "id": "mcp_17",
+    "out": "mcp_17.mp4",
+    "title": "Requests, responses, notifications",
+    "module": "Messaging",
+    "props": {
+      "animationType": "concept_reveal",
+      "title": "Requests, responses, notifications",
+      "subtitle": "MCP · Messaging · 17 of 50",
+      "brandColor": "#8b5cf6",
+      "secondaryColor": "#3b82f6",
+      "bgColor": "#030712",
+      "durationInFrames": 150,
+      "fps": 30
+    }
+  },
+  {
+    "id": "mcp_18",
+    "out": "mcp_18.mp4",
+    "title": "Capabilities are negotiated",
+    "module": "Messaging",
+    "props": {
+      "animationType": "concept_reveal",
+      "title": "Capabilities are negotiated",
+      "subtitle": "MCP · Messaging · 18 of 50",
+      "brandColor": "#8b5cf6",
+      "secondaryColor": "#3b82f6",
+      "bgColor": "#030712",
+      "durationInFrames": 150,
+      "fps": 30
+    }
+  },
+  {
+    "id": "mcp_19",
+    "out": "mcp_19.mp4",
+    "title": "Initialize before you call",
+    "module": "Messaging",
+    "props": {
+      "animationType": "concept_reveal",
+      "title": "Initialize before you call",
+      "subtitle": "MCP · Messaging · 19 of 50",
+      "brandColor": "#8b5cf6",
+      "secondaryColor": "#3b82f6",
+      "bgColor": "#030712",
+      "durationInFrames": 150,
+      "fps": 30
+    }
+  },
+  {
+    "id": "mcp_20",
+    "out": "mcp_20.mp4",
+    "title": "Errors follow JSON-RPC codes",
+    "module": "Messaging",
+    "props": {
+      "animationType": "concept_reveal",
+      "title": "Errors follow JSON-RPC codes",
+      "subtitle": "MCP · Messaging · 20 of 50",
+      "brandColor": "#8b5cf6",
+      "secondaryColor": "#3b82f6",
+      "bgColor": "#030712",
+      "durationInFrames": 150,
+      "fps": 30
+    }
+  },
+  {
+    "id": "mcp_21",
+    "out": "mcp_21.mp4",
+    "title": "stdio for local servers",
+    "module": "Transports",
+    "props": {
+      "animationType": "concept_reveal",
+      "title": "stdio for local servers",
+      "subtitle": "MCP · Transports · 21 of 50",
+      "brandColor": "#8b5cf6",
+      "secondaryColor": "#3b82f6",
+      "bgColor": "#030712",
+      "durationInFrames": 150,
+      "fps": 30
+    }
+  },
+  {
+    "id": "mcp_22",
+    "out": "mcp_22.mp4",
+    "title": "HTTP and SSE for remote",
+    "module": "Transports",
+    "props": {
+      "animationType": "concept_reveal",
+      "title": "HTTP and SSE for remote",
+      "subtitle": "MCP · Transports · 22 of 50",
+      "brandColor": "#8b5cf6",
+      "secondaryColor": "#3b82f6",
+      "bgColor": "#030712",
+      "durationInFrames": 150,
+      "fps": 30
+    }
+  },
+  {
+    "id": "mcp_23",
+    "out": "mcp_23.mp4",
+    "title": "Streamable HTTP is the new default",
+    "module": "Transports",
+    "props": {
+      "animationType": "concept_reveal",
+      "title": "Streamable HTTP is the new default",
+      "subtitle": "MCP · Transports · 23 of 50",
+      "brandColor": "#8b5cf6",
+      "secondaryColor": "#3b82f6",
+      "bgColor": "#030712",
+      "durationInFrames": 150,
+      "fps": 30
+    }
+  },
+  {
+    "id": "mcp_24",
+    "out": "mcp_24.mp4",
+    "title": "Stateful sessions over HTTP",
+    "module": "Transports",
+    "props": {
+      "animationType": "concept_reveal",
+      "title": "Stateful sessions over HTTP",
+      "subtitle": "MCP · Transports · 24 of 50",
+      "brandColor": "#8b5cf6",
+      "secondaryColor": "#3b82f6",
+      "bgColor": "#030712",
+      "durationInFrames": 150,
+      "fps": 30
+    }
+  },
+  {
+    "id": "mcp_25",
+    "out": "mcp_25.mp4",
+    "title": "Choose transport by deployment",
+    "module": "Transports",
+    "props": {
+      "animationType": "concept_reveal",
+      "title": "Choose transport by deployment",
+      "subtitle": "MCP · Transports · 25 of 50",
+      "brandColor": "#8b5cf6",
+      "secondaryColor": "#3b82f6",
+      "bgColor": "#030712",
+      "durationInFrames": 150,
+      "fps": 30
+    }
+  },
+  {
+    "id": "mcp_26",
+    "out": "mcp_26.mp4",
+    "title": "Describe tools with JSON Schema",
+    "module": "Tools Deep Dive",
+    "props": {
+      "animationType": "concept_reveal",
+      "title": "Describe tools with JSON Schema",
+      "subtitle": "MCP · Tools Deep Dive · 26 of 50",
+      "brandColor": "#8b5cf6",
+      "secondaryColor": "#3b82f6",
+      "bgColor": "#030712",
+      "durationInFrames": 150,
+      "fps": 30
+    }
+  },
+  {
+    "id": "mcp_27",
+    "out": "mcp_27.mp4",
+    "title": "The model picks the tool",
+    "module": "Tools Deep Dive",
+    "props": {
+      "animationType": "concept_reveal",
+      "title": "The model picks the tool",
+      "subtitle": "MCP · Tools Deep Dive · 27 of 50",
+      "brandColor": "#8b5cf6",
+      "secondaryColor": "#3b82f6",
+      "bgColor": "#030712",
+      "durationInFrames": 150,
+      "fps": 30
+    }
+  },
+  {
+    "id": "mcp_28",
+    "out": "mcp_28.mp4",
+    "title": "Validate every argument",
+    "module": "Tools Deep Dive",
+    "props": {
+      "animationType": "concept_reveal",
+      "title": "Validate every argument",
+      "subtitle": "MCP · Tools Deep Dive · 28 of 50",
+      "brandColor": "#8b5cf6",
+      "secondaryColor": "#3b82f6",
+      "bgColor": "#030712",
+      "durationInFrames": 150,
+      "fps": 30
+    }
+  },
+  {
+    "id": "mcp_29",
+    "out": "mcp_29.mp4",
+    "title": "Return structured results",
+    "module": "Tools Deep Dive",
+    "props": {
+      "animationType": "concept_reveal",
+      "title": "Return structured results",
+      "subtitle": "MCP · Tools Deep Dive · 29 of 50",
+      "brandColor": "#8b5cf6",
+      "secondaryColor": "#3b82f6",
+      "bgColor": "#030712",
+      "durationInFrames": 150,
+      "fps": 30
+    }
+  },
+  {
+    "id": "mcp_30",
+    "out": "mcp_30.mp4",
+    "title": "Annotate read versus write",
+    "module": "Tools Deep Dive",
+    "props": {
+      "animationType": "concept_reveal",
+      "title": "Annotate read versus write",
+      "subtitle": "MCP · Tools Deep Dive · 30 of 50",
+      "brandColor": "#8b5cf6",
+      "secondaryColor": "#3b82f6",
+      "bgColor": "#030712",
+      "durationInFrames": 150,
+      "fps": 30
+    }
+  },
+  {
+    "id": "mcp_31",
+    "out": "mcp_31.mp4",
+    "title": "Treat tool output as untrusted",
+    "module": "Security",
+    "props": {
+      "animationType": "concept_reveal",
+      "title": "Treat tool output as untrusted",
+      "subtitle": "MCP · Security · 31 of 50",
+      "brandColor": "#8b5cf6",
+      "secondaryColor": "#3b82f6",
+      "bgColor": "#030712",
+      "durationInFrames": 150,
+      "fps": 30
+    }
+  },
+  {
+    "id": "mcp_32",
+    "out": "mcp_32.mp4",
+    "title": "Confirm before side effects",
+    "module": "Security",
+    "props": {
+      "animationType": "concept_reveal",
+      "title": "Confirm before side effects",
+      "subtitle": "MCP · Security · 32 of 50",
+      "brandColor": "#8b5cf6",
+      "secondaryColor": "#3b82f6",
+      "bgColor": "#030712",
+      "durationInFrames": 150,
+      "fps": 30
+    }
+  },
+  {
+    "id": "mcp_33",
+    "out": "mcp_33.mp4",
+    "title": "Scope tokens to least privilege",
+    "module": "Security",
+    "props": {
+      "animationType": "concept_reveal",
+      "title": "Scope tokens to least privilege",
+      "subtitle": "MCP · Security · 33 of 50",
+      "brandColor": "#8b5cf6",
+      "secondaryColor": "#3b82f6",
+      "bgColor": "#030712",
+      "durationInFrames": 150,
+      "fps": 30
+    }
+  },
+  {
+    "id": "mcp_34",
+    "out": "mcp_34.mp4",
+    "title": "Beware injection via context",
+    "module": "Security",
+    "props": {
+      "animationType": "concept_reveal",
+      "title": "Beware injection via context",
+      "subtitle": "MCP · Security · 34 of 50",
+      "brandColor": "#8b5cf6",
+      "secondaryColor": "#3b82f6",
+      "bgColor": "#030712",
+      "durationInFrames": 150,
+      "fps": 30
+    }
+  },
+  {
+    "id": "mcp_35",
+    "out": "mcp_35.mp4",
+    "title": "Audit every server call",
+    "module": "Security",
+    "props": {
+      "animationType": "concept_reveal",
+      "title": "Audit every server call",
+      "subtitle": "MCP · Security · 35 of 50",
+      "brandColor": "#8b5cf6",
+      "secondaryColor": "#3b82f6",
+      "bgColor": "#030712",
+      "durationInFrames": 150,
+      "fps": 30
+    }
+  },
+  {
+    "id": "mcp_36",
+    "out": "mcp_36.mp4",
+    "title": "Start with the SDK",
+    "module": "Building Servers",
+    "props": {
+      "animationType": "concept_reveal",
+      "title": "Start with the SDK",
+      "subtitle": "MCP · Building Servers · 36 of 50",
+      "brandColor": "#8b5cf6",
+      "secondaryColor": "#3b82f6",
+      "bgColor": "#030712",
+      "durationInFrames": 150,
+      "fps": 30
+    }
+  },
+  {
+    "id": "mcp_37",
+    "out": "mcp_37.mp4",
+    "title": "Expose one capability well",
+    "module": "Building Servers",
+    "props": {
+      "animationType": "concept_reveal",
+      "title": "Expose one capability well",
+      "subtitle": "MCP · Building Servers · 37 of 50",
+      "brandColor": "#8b5cf6",
+      "secondaryColor": "#3b82f6",
+      "bgColor": "#030712",
+      "durationInFrames": 150,
+      "fps": 30
+    }
+  },
+  {
+    "id": "mcp_38",
+    "out": "mcp_38.mp4",
+    "title": "Test with the inspector",
+    "module": "Building Servers",
+    "props": {
+      "animationType": "concept_reveal",
+      "title": "Test with the inspector",
+      "subtitle": "MCP · Building Servers · 38 of 50",
+      "brandColor": "#8b5cf6",
+      "secondaryColor": "#3b82f6",
+      "bgColor": "#030712",
+      "durationInFrames": 150,
+      "fps": 30
+    }
+  },
+  {
+    "id": "mcp_39",
+    "out": "mcp_39.mp4",
+    "title": "Version your server",
+    "module": "Building Servers",
+    "props": {
+      "animationType": "concept_reveal",
+      "title": "Version your server",
+      "subtitle": "MCP · Building Servers · 39 of 50",
+      "brandColor": "#8b5cf6",
+      "secondaryColor": "#3b82f6",
+      "bgColor": "#030712",
+      "durationInFrames": 150,
+      "fps": 30
+    }
+  },
+  {
+    "id": "mcp_40",
+    "out": "mcp_40.mp4",
+    "title": "Document every tool",
+    "module": "Building Servers",
+    "props": {
+      "animationType": "concept_reveal",
+      "title": "Document every tool",
+      "subtitle": "MCP · Building Servers · 40 of 50",
+      "brandColor": "#8b5cf6",
+      "secondaryColor": "#3b82f6",
+      "bgColor": "#030712",
+      "durationInFrames": 150,
+      "fps": 30
+    }
+  },
+  {
+    "id": "mcp_41",
+    "out": "mcp_41.mp4",
+    "title": "Claude Desktop speaks MCP",
+    "module": "Clients & Hosts",
+    "props": {
+      "animationType": "concept_reveal",
+      "title": "Claude Desktop speaks MCP",
+      "subtitle": "MCP · Clients & Hosts · 41 of 50",
+      "brandColor": "#8b5cf6",
+      "secondaryColor": "#3b82f6",
+      "bgColor": "#030712",
+      "durationInFrames": 150,
+      "fps": 30
+    }
+  },
+  {
+    "id": "mcp_42",
+    "out": "mcp_42.mp4",
+    "title": "Claude Code is an MCP host",
+    "module": "Clients & Hosts",
+    "props": {
+      "animationType": "concept_reveal",
+      "title": "Claude Code is an MCP host",
+      "subtitle": "MCP · Clients & Hosts · 42 of 50",
+      "brandColor": "#8b5cf6",
+      "secondaryColor": "#3b82f6",
+      "bgColor": "#030712",
+      "durationInFrames": 150,
+      "fps": 30
+    }
+  },
+  {
+    "id": "mcp_43",
+    "out": "mcp_43.mp4",
+    "title": "Discover servers dynamically",
+    "module": "Clients & Hosts",
+    "props": {
+      "animationType": "concept_reveal",
+      "title": "Discover servers dynamically",
+      "subtitle": "MCP · Clients & Hosts · 43 of 50",
+      "brandColor": "#8b5cf6",
+      "secondaryColor": "#3b82f6",
+      "bgColor": "#030712",
+      "durationInFrames": 150,
+      "fps": 30
+    }
+  },
+  {
+    "id": "mcp_44",
+    "out": "mcp_44.mp4",
+    "title": "Handle server failures gracefully",
+    "module": "Clients & Hosts",
+    "props": {
+      "animationType": "concept_reveal",
+      "title": "Handle server failures gracefully",
+      "subtitle": "MCP · Clients & Hosts · 44 of 50",
+      "brandColor": "#8b5cf6",
+      "secondaryColor": "#3b82f6",
+      "bgColor": "#030712",
+      "durationInFrames": 150,
+      "fps": 30
+    }
+  },
+  {
+    "id": "mcp_45",
+    "out": "mcp_45.mp4",
+    "title": "Cache resource reads",
+    "module": "Clients & Hosts",
+    "props": {
+      "animationType": "concept_reveal",
+      "title": "Cache resource reads",
+      "subtitle": "MCP · Clients & Hosts · 45 of 50",
+      "brandColor": "#8b5cf6",
+      "secondaryColor": "#3b82f6",
+      "bgColor": "#030712",
+      "durationInFrames": 150,
+      "fps": 30
+    }
+  },
+  {
+    "id": "mcp_46",
+    "out": "mcp_46.mp4",
+    "title": "A growing server registry",
+    "module": "Ecosystem",
+    "props": {
+      "animationType": "concept_reveal",
+      "title": "A growing server registry",
+      "subtitle": "MCP · Ecosystem · 46 of 50",
+      "brandColor": "#8b5cf6",
+      "secondaryColor": "#3b82f6",
+      "bgColor": "#030712",
+      "durationInFrames": 150,
+      "fps": 30
+    }
+  },
+  {
+    "id": "mcp_47",
+    "out": "mcp_47.mp4",
+    "title": "Reuse community servers",
+    "module": "Ecosystem",
+    "props": {
+      "animationType": "concept_reveal",
+      "title": "Reuse community servers",
+      "subtitle": "MCP · Ecosystem · 47 of 50",
+      "brandColor": "#8b5cf6",
+      "secondaryColor": "#3b82f6",
+      "bgColor": "#030712",
+      "durationInFrames": 150,
+      "fps": 30
+    }
+  },
+  {
+    "id": "mcp_48",
+    "out": "mcp_48.mp4",
+    "title": "Compose servers into agents",
+    "module": "Ecosystem",
+    "props": {
+      "animationType": "concept_reveal",
+      "title": "Compose servers into agents",
+      "subtitle": "MCP · Ecosystem · 48 of 50",
+      "brandColor": "#8b5cf6",
+      "secondaryColor": "#3b82f6",
+      "bgColor": "#030712",
+      "durationInFrames": 150,
+      "fps": 30
+    }
+  },
+  {
+    "id": "mcp_49",
+    "out": "mcp_49.mp4",
+    "title": "MCP standardizes integration",
+    "module": "Ecosystem",
+    "props": {
+      "animationType": "concept_reveal",
+      "title": "MCP standardizes integration",
+      "subtitle": "MCP · Ecosystem · 49 of 50",
+      "brandColor": "#8b5cf6",
+      "secondaryColor": "#3b82f6",
+      "bgColor": "#030712",
+      "durationInFrames": 150,
+      "fps": 30
+    }
+  },
+  {
+    "id": "mcp_50",
+    "out": "mcp_50.mp4",
+    "title": "Build once, connect anywhere",
+    "module": "Ecosystem",
+    "props": {
+      "animationType": "concept_reveal",
+      "title": "Build once, connect anywhere",
+      "subtitle": "MCP · Ecosystem · 50 of 50",
+      "brandColor": "#8b5cf6",
+      "secondaryColor": "#3b82f6",
+      "bgColor": "#030712",
+      "durationInFrames": 150,
+      "fps": 30
+    }
+  }
+]
