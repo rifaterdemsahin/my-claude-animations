@@ -9,6 +9,8 @@
 **Architecture, RunPod execution, performance & cost:** see [`ARCHITECTURE.md`](./ARCHITECTURE.md)
 **Local vs RunPod — measured comparison & pros/cons:** see [`LOCAL_VS_RUNPOD.md`](./LOCAL_VS_RUNPOD.md)
 **Why the numbers are what they are (rationale):** see [`PERFORMANCE_RATIONALE.md`](./PERFORMANCE_RATIONALE.md)
+**Consume from another app (Player / Node / RunPod API) + props for all 10 types:** see [`CONSUMING.md`](./CONSUMING.md)
+**How we got RunPod working, step by step (build log):** see [`RUNPOD_WALKTHROUGH.md`](./RUNPOD_WALKTHROUGH.md)
 
 ---
 
