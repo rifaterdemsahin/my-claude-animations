@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Claude Animations · Sample Gallery</title>
+<meta name="description" content="A gallery of 10 Remotion animation templates used to generate Claude Architect course videos — concept reveals, code typing, process steps, metrics, timelines, comparisons, data flows, architecture diagrams, flowcharts and callout zooms." />
+<meta property="og:title" content="Claude Animations · Sample Gallery" />
+<meta property="og:description" content="10 reusable Remotion animation templates, rendered to video." />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎬</text></svg>" />
+<style>
+  :root{
+    --bg:#030712; --panel:#0b1220; --panel-2:#111827;
+    --violet:#8b5cf6; --blue:#3b82f6; --ink:#e5e7eb; --muted:#9ca3af;
+    --line:rgba(139,92,246,.18);
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:var(--violet); text-decoration:none}
+  a:hover{text-decoration:underline}
+
+  .wrap{max-width:1240px; margin:0 auto; padding:0 24px}
+
+  header{
+    position:relative; overflow:hidden;
+    padding:96px 24px 72px;
+    text-align:center;
+    background:
+      radial-gradient(900px 420px at 50% -120px, rgba(139,92,246,.30), transparent 70%),
+      radial-gradient(700px 360px at 85% 0, rgba(59,130,246,.20), transparent 70%);
+    border-bottom:1px solid var(--line);
+  }
+  .eyebrow{
+    display:inline-block; font-size:13px; letter-spacing:.18em; text-transform:uppercase;
+    color:var(--muted); border:1px solid var(--line); padding:6px 14px; border-radius:999px;
+    margin-bottom:22px;
+  }
+  h1{
+    margin:0; font-size:clamp(38px,6vw,76px); line-height:1.02; font-weight:800;
+    background:linear-gradient(120deg,var(--violet),var(--blue));
+    -webkit-background-clip:text; background-clip:text; color:transparent;
+  }
+  .lede{max-width:680px; margin:22px auto 0; font-size:clamp(16px,2.2vw,20px); color:var(--muted); line-height:1.6}
+  .actions{margin-top:34px; display:flex; gap:14px; justify-content:center; flex-wrap:wrap}
+  .btn{
+    display:inline-flex; align-items:center; gap:8px;
+    padding:12px 22px; border-radius:12px; font-weight:600; font-size:15px;
+    border:1px solid var(--line); color:var(--ink); transition:.18s ease;
+  }
+  .btn:hover{text-decoration:none; transform:translateY(-1px); border-color:var(--violet)}
+  .btn.primary{background:linear-gradient(120deg,var(--violet),var(--blue)); border-color:transparent; color:#fff}
+
+  .stats{display:flex; gap:40px; justify-content:center; flex-wrap:wrap; margin-top:46px}
+  .stat b{display:block; font-size:30px; font-weight:800; color:#fff}
+  .stat span{font-size:13px; color:var(--muted); letter-spacing:.04em}
+
+  section{padding:64px 0 24px}
+  .sec-head{display:flex; align-items:baseline; gap:14px; margin-bottom:26px}
+  .sec-head h2{margin:0; font-size:26px; font-weight:800}
+  .sec-head p{margin:0; color:var(--muted); font-size:15px}
+
+  .grid{
+    display:grid; gap:22px;
+    grid-template-columns:repeat(auto-fill, minmax(330px, 1fr));
+  }
+  .card{
+    background:linear-gradient(180deg,var(--panel),var(--panel-2));
+    border:1px solid var(--line); border-radius:18px; overflow:hidden;
+    transition:.2s ease; display:flex; flex-direction:column;
+  }
+  .card:hover{transform:translateY(-4px); border-color:var(--violet); box-shadow:0 18px 40px -20px rgba(139,92,246,.6)}
+  .frame{position:relative; aspect-ratio:16/9; background:#000; cursor:pointer}
+  .frame video{width:100%; height:100%; display:block; object-fit:cover}
+  .badge{
+    position:absolute; top:12px; left:12px; z-index:2;
+    font-size:12px; font-weight:700; letter-spacing:.05em;
+    padding:5px 10px; border-radius:8px; color:#fff;
+    background:rgba(3,7,18,.7); border:1px solid var(--line); backdrop-filter:blur(6px);
+  }
+  .play{
+    position:absolute; inset:0; display:flex; align-items:center; justify-content:center;
+    z-index:1; pointer-events:none; transition:opacity .2s;
+  }
+  .play svg{width:62px; height:62px; filter:drop-shadow(0 6px 18px rgba(0,0,0,.6))}
+  .frame.playing .play{opacity:0}
+  .meta{padding:18px 20px 20px}
+  .meta h3{margin:0 0 6px; font-size:18px; font-weight:700}
+  .meta .type{font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-size:12px; color:var(--violet)}
+  .meta p{margin:10px 0 0; font-size:14px; line-height:1.55; color:var(--muted)}
+
+  footer{border-top:1px solid var(--line); margin-top:60px; padding:46px 24px 70px; text-align:center; color:var(--muted); font-size:14px}
+  footer .links{display:flex; gap:22px; justify-content:center; flex-wrap:wrap; margin-bottom:18px}
+  code{background:var(--panel-2); padding:2px 7px; border-radius:6px; font-size:13px; color:#c4b5fd}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <span class="eyebrow">Remotion · Claude Architect</span>
+    <h1>Animation Sample Gallery</h1>
+    <p class="lede">Ten reusable, prop-driven motion templates that turn course copy into 1080p video.
+    One <code>&lt;Composition&gt;</code> dispatches to every type via <code>animationType</code> — these are the rendered outputs.</p>
+    <div class="actions">
+      <a class="btn primary" href="https://github.com/rifaterdemsahin/my-claude-animations">★ View on GitHub</a>
+      <a class="btn" href="#gallery">Browse samples ↓</a>
+    </div>
+    <div class="stats">
+      <div class="stat"><b>10</b><span>TEMPLATES</span></div>
+      <div class="stat"><b>1920×1080</b><span>RESOLUTION</span></div>
+      <div class="stat"><b>30 fps</b><span>FRAME RATE</span></div>
+      <div class="stat"><b>100%</b><span>CODE-DRIVEN</span></div>
+    </div>
+  </div>
+</header>
+
+<section id="gallery" class="wrap">
+  <div class="sec-head">
+    <h2>The 10 templates</h2>
+    <p>Hover or tap any clip to play.</p>
+  </div>
+  <div class="grid" id="grid"></div>
+</section>
+
+<footer>
+  <div class="links">
+    <a href="https://github.com/rifaterdemsahin/my-claude-animations">Repository</a>
+    <a href="https://github.com/rifaterdemsahin/my-claude-animations/blob/main/src/Main.tsx">Source · Main.tsx</a>
+    <a href="https://www.remotion.dev/">Built with Remotion</a>
+  </div>
+  <div>Brand palette · violet <code>#8b5cf6</code> · blue <code>#3b82f6</code> · ink <code>#030712</code></div>
+</footer>
+
+<script>
+const SAMPLES = [
+  ["concept_reveal","Concept Reveal","A headline springs in with a motion-blur reveal and an underline wipe — the opener for a new idea."],
+  ["code_typing","Code Typing","A syntax-highlighted snippet types itself character by character with a blinking caret, then captions the takeaway."],
+  ["process_steps","Process Steps","Numbered steps slide in and check off one at a time, with a progress bar tracking completion."],
+  ["metric_counter","Metric Counter","A big number eases up to its target and pulses a ring on arrival — for stats and KPIs."],
+  ["timeline","Timeline","Milestones drop onto a drawing axis in sequence, the latest one pinging with a pulse ring."],
+  ["comparison","Comparison","Two panels slide in from each side; the winning option lifts and outlines in green."],
+  ["data_flow","Data Flow","Labeled stages rise into place while a packet animates along the pipeline, lighting each box as it passes."],
+  ["architecture_diagram","Architecture Diagram","Connector lines draw between nodes that pop in, with one active node glowing and pulsing."],
+  ["flowchart","Flowchart","Process and decision shapes appear top-to-bottom as edges draw between them — diamonds for branches."],
+  ["callout_zoom","Callout Zoom","The scene zooms toward a focus point, drops a highlight box and leader line, then labels the detail."],
+];
+
+const grid = document.getElementById("grid");
+SAMPLES.forEach(([id,name,desc])=>{
+  const card = document.createElement("article");
+  card.className = "card";
+  card.innerHTML = `
+    <div class="frame" data-id="${id}">
+      <span class="badge">${id}</span>
+      <video preload="none" muted loop playsinline poster="samples/posters/${id}.jpg">
+        <source src="samples/${id}.mp4" type="video/mp4" />
+      </video>
+      <div class="play">
+        <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="rgba(139,92,246,.92)"/><path d="M10 8.5l6 3.5-6 3.5z" fill="#fff"/></svg>
+      </div>
+    </div>
+    <div class="meta">
+      <h3>${name}</h3>
+      <div class="type">animationType: "${id}"</div>
+      <p>${desc}</p>
+    </div>`;
+  grid.appendChild(card);
+
+  const frame = card.querySelector(".frame");
+  const video = card.querySelector("video");
+  const play = ()=>{ frame.classList.add("playing"); video.play().catch(()=>{}); };
+  const stop = ()=>{ frame.classList.remove("playing"); video.pause(); };
+  frame.addEventListener("mouseenter", play);
+  frame.addEventListener("mouseleave", stop);
+  // tap to toggle on touch devices
+  frame.addEventListener("click", ()=> frame.classList.contains("playing") ? stop() : play());
+});
+</script>
+</body>
+</html>
