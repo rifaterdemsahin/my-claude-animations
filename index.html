@@ -105,6 +105,22 @@
   .meta .type{font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-size:12px; color:var(--violet)}
   .meta p{margin:10px 0 0; font-size:14px; line-height:1.55; color:var(--muted)}
 
+  /* modal popup */
+  .modal-overlay{position:fixed; inset:0; z-index:100; display:none; align-items:center; justify-content:center;
+    background:rgba(3,7,18,.82); backdrop-filter:blur(8px); padding:24px;}
+  .modal-overlay.open{display:flex}
+  .modal{position:relative; background:linear-gradient(180deg,var(--panel),var(--panel-2)); border:1px solid var(--line);
+    border-radius:18px; max-width:960px; width:100%; overflow:hidden; box-shadow:0 30px 80px -20px rgba(0,0,0,.85);}
+  .modal .mvid{width:100%; aspect-ratio:16/9; background:#000; display:block}
+  .modal-body{padding:18px 22px 22px; display:flex; align-items:flex-end; justify-content:space-between; gap:16px; flex-wrap:wrap}
+  .modal-body h3{margin:0 0 6px; font-size:20px; font-weight:800}
+  .modal-body .type{font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-size:12px; color:var(--violet)}
+  .modal-actions{display:flex; gap:10px}
+  .modal-close{position:absolute; top:14px; right:14px; z-index:101; cursor:pointer; color:#fff;
+    background:rgba(3,7,18,.65); border:1px solid var(--line); border-radius:10px; width:40px; height:40px;
+    font-size:24px; line-height:1; display:flex; align-items:center; justify-content:center}
+  .modal-close:hover{border-color:var(--violet)}
+
   footer{border-top:1px solid var(--line); margin-top:60px; padding:46px 24px 70px; text-align:center; color:var(--muted); font-size:14px}
   footer .links{display:flex; gap:22px; justify-content:center; flex-wrap:wrap; margin-bottom:18px}
   code{background:var(--panel-2); padding:2px 7px; border-radius:6px; font-size:13px; color:#c4b5fd}
@@ -144,7 +160,7 @@
 <section id="gallery" class="wrap">
   <div class="sec-head">
     <h2>The 10 templates</h2>
-    <p>Hover or tap any clip to play.</p>
+    <p>Hover to preview · click any clip to open &amp; download.</p>
   </div>
   <div class="grid" id="grid"></div>
 </section>
@@ -157,6 +173,22 @@
   </div>
   <div>Brand palette · violet <code>#8b5cf6</code> · blue <code>#3b82f6</code> · ink <code>#030712</code></div>
 </footer>
+
+<div class="modal-overlay" id="modal" role="dialog" aria-modal="true" aria-label="Animation preview">
+  <button class="modal-close" id="modalClose" aria-label="Close">×</button>
+  <div class="modal">
+    <video class="mvid" id="modalVideo" controls autoplay loop muted playsinline></video>
+    <div class="modal-body">
+      <div>
+        <h3 id="modalTitle"></h3>
+        <div class="type" id="modalType"></div>
+      </div>
+      <div class="modal-actions">
+        <a class="btn primary" id="modalDownload" download>⬇ Download MP4</a>
+      </div>
+    </div>
+  </div>
+</div>
 
 <script>
 const SAMPLES = [
@@ -199,9 +231,35 @@ SAMPLES.forEach(([id,name,desc])=>{
   const stop = ()=>{ frame.classList.remove("playing"); video.pause(); };
   frame.addEventListener("mouseenter", play);
   frame.addEventListener("mouseleave", stop);
-  // tap to toggle on touch devices
-  frame.addEventListener("click", ()=> frame.classList.contains("playing") ? stop() : play());
+  // click opens the modal (with download); hover still previews inline
+  frame.addEventListener("click", ()=> openModal(id, name));
 });
+
+// ── modal popup + download ──────────────────────────────────────────────────
+const modal = document.getElementById("modal");
+const mVideo = document.getElementById("modalVideo");
+const mTitle = document.getElementById("modalTitle");
+const mType = document.getElementById("modalType");
+const mDl = document.getElementById("modalDownload");
+function openModal(id, name){
+  mVideo.src = `samples/${id}.mp4`;
+  mVideo.poster = `samples/posters/${id}.jpg`;
+  mTitle.textContent = name;
+  mType.textContent = `animationType: "${id}"`;
+  mDl.href = `samples/${id}.mp4`;
+  mDl.setAttribute("download", `${id}.mp4`);
+  modal.classList.add("open");
+  document.body.style.overflow = "hidden";
+  mVideo.play().catch(()=>{});
+}
+function closeModal(){
+  modal.classList.remove("open");
+  document.body.style.overflow = "";
+  mVideo.pause();
+}
+document.getElementById("modalClose").addEventListener("click", closeModal);
+modal.addEventListener("click", (e)=>{ if(e.target === modal) closeModal(); });
+document.addEventListener("keydown", (e)=>{ if(e.key === "Escape" && modal.classList.contains("open")) closeModal(); });
 </script>
 </body>
 </html>
