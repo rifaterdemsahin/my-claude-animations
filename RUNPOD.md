@@ -23,7 +23,7 @@ manifest.json ──► runpod-submit.mjs ──► RunPod endpoint ──► N 
    (50 jobs)         (your laptop)         (your image)      render in parallel
                                                                   │
                                           each worker uploads ────┘
-                                          mp4 → S3/R2 bucket ──► PUBLIC_BASE_URL
+                                          mp4 → Azure Blob ($web) ──► PUBLIC_BASE_URL
                                                                   │
                           batch_inrunpod.html reads outputs.json ◄┘  & plays them
 ```
@@ -37,10 +37,12 @@ re-bundle. One job = one clip = `{ "props": {...}, "out": "mcp_01.mp4" }`.
 
 - A **RunPod** account with billing enabled, and an **API key**
   (RunPod console → Settings → API Keys).
-- A **Docker Hub** (or other registry) account to host the worker image.
-- An **S3-compatible bucket** with public read — **Cloudflare R2** (has a free
-  tier and a public `*.r2.dev` URL) or **AWS S3**. You need: endpoint URL,
-  bucket name, access key id, secret key, and the public base URL it serves from.
+- A container registry to host the worker image (this project uses
+  **ghcr.io/rifaterdemsahin/claude-animations-runpod**, made public).
+- An **Azure Storage account** with a publicly served container. This project
+  uses **`claudecertstore`** (RG `claude-certificate-training`) whose **static
+  website** is already public at `https://claudecertstore.z13.web.core.windows.net/`,
+  so clips upload to its `$web` container under an `mcp/` prefix.
 
 ---
 
@@ -67,21 +69,24 @@ RunPod console → **Serverless** → **New Endpoint**:
   cold starts during the run).
 - Note the **Endpoint ID**.
 
-## Step 3 — Set the bucket secrets on the endpoint
+## Step 3 — Set the Azure Blob secrets on the endpoint
 
 Add these as **environment variables / secrets** on the endpoint (they're read by
 [`handler.py`](./runpod/handler.py)):
 
-| Var | Example | Notes |
-|-----|---------|-------|
-| `S3_ENDPOINT` | `https://<acct>.r2.cloudflarestorage.com` | R2 or `https://s3.<region>.amazonaws.com` |
-| `S3_BUCKET` | `claude-animations` | bucket name |
-| `S3_ACCESS_KEY_ID` | `...` | |
-| `S3_SECRET_KEY` | `...` | |
-| `S3_PREFIX` | `mcp` | key prefix (default `mcp`) |
-| `PUBLIC_BASE_URL` | `https://pub-xxxx.r2.dev` | public base, **no trailing slash** |
+| Var | Value for this project | Notes |
+|-----|------------------------|-------|
+| `AZURE_STORAGE_CONNECTION_STRING` | *(your account key — set it yourself)* | get it with `az storage account show-connection-string -g claude-certificate-training -n claudecertstore --query connectionString -o tsv` |
+| `AZURE_CONTAINER` | `$web` | the already-public static-website container |
+| `AZURE_PREFIX` | `mcp` | blob-name prefix (default `mcp`) |
+| `PUBLIC_BASE_URL` | `https://claudecertstore.z13.web.core.windows.net` | static-website base, **no trailing slash** |
 
-The final public URL of a clip will be `PUBLIC_BASE_URL/S3_PREFIX/mcp_NN.mp4`.
+The final public URL of a clip will be
+`https://claudecertstore.z13.web.core.windows.net/mcp/mcp_NN.mp4`.
+
+> Run the `az ... show-connection-string` command yourself and paste the value
+> straight into the RunPod secret — don't route the account key through anyone
+> else. The connection string contains the storage account key.
 
 ## Step 4 — Submit the 50 jobs
 
@@ -104,7 +109,7 @@ just set the base URL once near the top of
 [`batch_inrunpod.html`](./batch_inrunpod.html):
 
 ```js
-const OUTPUT_BASE_URL = "https://pub-xxxx.r2.dev/mcp"; // PUBLIC_BASE_URL + "/" + S3_PREFIX
+const OUTPUT_BASE_URL = "https://claudecertstore.z13.web.core.windows.net/mcp"; // PUBLIC_BASE_URL + "/" + AZURE_PREFIX
 ```
 
 Until then the page shows each clip as **⏳ Awaiting RunPod render** over its
@@ -145,11 +150,14 @@ clips or when you don't want to tie up your machine. Full reasoning in
 
 ## Troubleshooting
 
-- **Jobs FAIL immediately** → check the endpoint logs; usually a missing `S3_*`
-  secret or a bucket-permissions error.
+- **Jobs FAIL immediately** → check the endpoint logs; usually a missing/wrong
+  `AZURE_STORAGE_CONNECTION_STRING` or the container doesn't exist.
 - **Chrome/render errors** → the image already installs the headless-Chrome libs
   and runs `remotion browser ensure`; if you slimmed the Dockerfile, re-add the
   `libnss3 … libasound2` line.
 - **Page shows ⏳ forever** → `OUTPUT_BASE_URL` is unset *and* `outputs.json` is
-  missing/empty, or the bucket isn't public. Open one clip URL directly to test.
-- **CORS / won't play** → enable public read + permissive CORS on the bucket.
+  missing/empty. Open one clip URL directly to test:
+  `https://claudecertstore.z13.web.core.windows.net/mcp/mcp_01.mp4`.
+- **Uploads 403 / not visible** → the static-website (`$web`) container serves
+  public read by design; confirm static website is enabled on the account and the
+  blob name is under the `mcp/` prefix.

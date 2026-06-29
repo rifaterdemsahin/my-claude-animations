@@ -29,8 +29,8 @@ RUN npx remotion bundle src/index.ts --out-dir=out
 # pre-download the headless browser so cold jobs don't fetch it
 RUN npx remotion browser ensure
 
-# Python worker SDK + S3 client
-RUN pip3 install --break-system-packages --no-cache-dir runpod boto3
+# Python worker SDK + Azure Blob client
+RUN pip3 install --break-system-packages --no-cache-dir runpod azure-storage-blob
 
 # worker code
 COPY runpod/handler.py runpod/render-one.mjs ./
