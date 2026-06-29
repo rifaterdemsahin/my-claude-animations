@@ -251,11 +251,14 @@ const Comparison: React.FC<any> = (p) => {
   };
   return (
     <Stage bgColor={p.bgColor}>
-      <div style={{ position: "absolute", top: 70, width: "100%", textAlign: "center", fontFamily: FONT_HEAD, fontWeight: 800, fontSize: 60 }}>{p.title}</div>
-      <div style={{ display: "flex", width: "88%", gap: 40, padding: 40 }}>
-        {panel("left", left, lX)}
-        <div style={{ width: 3, background: "rgba(255,255,255,0.12)" }} />
-        {panel("right", right, rX)}
+      <div style={{ position: "absolute", top: 70, left: 0, right: 0, textAlign: "center", fontFamily: FONT_HEAD, fontWeight: 800, fontSize: 60 }}>{p.title}</div>
+      {/* panels live in their own region BELOW the headline, top-aligned so they sit just under it (small gap) */}
+      <div style={{ position: "absolute", top: 180, left: 0, right: 0, bottom: 60, display: "flex", alignItems: "flex-start", justifyContent: "center" }}>
+        <div style={{ display: "flex", width: "88%", gap: 40, padding: 40, alignItems: "stretch" }}>
+          {panel("left", left, lX)}
+          <div style={{ width: 3, background: "rgba(255,255,255,0.12)" }} />
+          {panel("right", right, rX)}
+        </div>
       </div>
     </Stage>
   );
