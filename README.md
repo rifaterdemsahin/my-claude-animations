@@ -7,6 +7,7 @@
 **Live bundle (Phase 2 — deployed):** `https://dpremotionbundle.z33.web.core.windows.net/`
 **Local render proof (Phase 1):** all 10 types render to 1920×1080 h264 MP4 ✅
 **Architecture, RunPod execution, performance & cost:** see [`ARCHITECTURE.md`](./ARCHITECTURE.md)
+**Local vs RunPod — measured comparison & pros/cons:** see [`LOCAL_VS_RUNPOD.md`](./LOCAL_VS_RUNPOD.md)
 
 ---
 
