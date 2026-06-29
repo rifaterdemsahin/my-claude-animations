@@ -80,20 +80,139 @@ You can also render a **single still** with `renderStill(...)` for thumbnails.
 
 ## 3. Cloud HTTP API — RunPod serverless (any language)
 
-Best for scale or when your app isn't Node. Deploy the worker once (see
-[`RUNPOD.md`](./RUNPOD.md) / [`RUNPOD_WALKTHROUGH.md`](./RUNPOD_WALKTHROUGH.md)),
-then **any app in any language** submits a job over HTTP and gets back a URL.
+**This is how an external app should call this project.** You deploy the worker
+once (see [`RUNPOD.md`](./RUNPOD.md)), and then your app talks to a plain HTTP
+endpoint — **you call RunPod directly**, no SDK required. Each request renders
+one clip and the worker uploads it to your bucket; the job result is the public
+MP4 URL.
 
-```bash
-curl -X POST https://api.runpod.ai/v2/<ENDPOINT_ID>/run \
-  -H "Authorization: Bearer $RUNPOD_API_KEY" \
-  -H "Content-Type: application/json" \
-  -d '{"input":{"props":{"animationType":"concept_reveal","title":"Hello"},"out":"hello.mp4"}}'
-# → { "id": "..." }  then poll /status/{id}  → { "output": { "url": "https://…/mcp/hello.mp4" } }
+### How the call process works
+
+```
+your app ─POST /run {input:{props,out}}─►  RunPod endpoint
+   │                                            │ (queues, a worker wakes)
+   │  ◄──────────── { "id": "JOB" } ────────────┘
+   │
+   │  GET /status/JOB  (poll every ~2–3s)
+   │  ◄── { "status": "IN_QUEUE" | "IN_PROGRESS" }      ← keep polling
+   │  ◄── { "status": "COMPLETED", "output": {           ← done
+   │          "url": "https://claudecertstore.z13.web.core.windows.net/mcp/hello.mp4",
+   │          "key": "mcp/hello.mp4", "out": "hello.mp4" } }
+   ▼
+ use output.url  (the rendered MP4, already public)
 ```
 
-The worker renders the clip and uploads it to your bucket; the job output is the
-public URL. [`runpod-submit.mjs`](./runpod-submit.mjs) shows batching + polling.
+- **Base URL:** `https://api.runpod.ai/v2/<ENDPOINT_ID>` (this project's endpoint
+  is `s13kv6t2jg78lk`).
+- **Auth:** header `Authorization: Bearer <RUNPOD_API_KEY>`.
+- **Request body:** `{"input": { "props": <inputProps>, "out": "<filename>.mp4" }}`
+  — `props` is any payload from §5; `out` is the blob filename to write.
+- **Routes:** `POST /run` (async, returns a job id) · `POST /runsync` (waits and
+  returns the result inline) · `GET /status/{id}` · `POST /cancel/{id}` ·
+  `GET /health` (worker counts).
+- **Job status values:** `IN_QUEUE` → `IN_PROGRESS` → `COMPLETED` (or `FAILED`).
+
+### Option A — async: submit, then poll (recommended)
+
+**1) Submit the job**
+```bash
+curl -X POST https://api.runpod.ai/v2/s13kv6t2jg78lk/run \
+  -H "Authorization: Bearer $RUNPOD_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{
+        "input": {
+          "props": { "animationType": "concept_reveal",
+                     "title": "MCP is an open protocol",
+                     "subtitle": "Foundations",
+                     "brandColor": "#8b5cf6", "secondaryColor": "#3b82f6", "bgColor": "#030712" },
+          "out": "hello.mp4"
+        }
+      }'
+# → {"id":"c80f...-e1","status":"IN_QUEUE"}
+```
+
+**2) Poll until done**
+```bash
+curl https://api.runpod.ai/v2/s13kv6t2jg78lk/status/c80f...-e1 \
+  -H "Authorization: Bearer $RUNPOD_API_KEY"
+# → {"status":"COMPLETED","output":{"url":"https://claudecertstore.z13.web.core.windows.net/mcp/hello.mp4","key":"mcp/hello.mp4","out":"hello.mp4"}}
+```
+
+### Option B — synchronous: one call, wait for the URL
+
+Simplest for a single short clip — `runsync` blocks until the render finishes
+(subject to RunPod's sync timeout). Good for "render one and show it now":
+
+```bash
+curl -X POST https://api.runpod.ai/v2/s13kv6t2jg78lk/runsync \
+  -H "Authorization: Bearer $RUNPOD_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{"input":{"props":{"animationType":"metric_counter","target":200,"suffix":"K","caption":"tokens of context"},"out":"ctx.mp4"}}'
+# → {"status":"COMPLETED","output":{"url":"https://…/mcp/ctx.mp4", ...}}
+```
+
+### From Node (fetch) — submit + poll
+
+```js
+const EP = "s13kv6t2jg78lk";
+const H = { "Content-Type": "application/json", Authorization: `Bearer ${process.env.RUNPOD_API_KEY}` };
+
+async function renderClip(props, out) {
+  const run = await fetch(`https://api.runpod.ai/v2/${EP}/run`, {
+    method: "POST", headers: H, body: JSON.stringify({ input: { props, out } }),
+  }).then(r => r.json());
+
+  for (;;) {                                   // poll
+    await new Promise(r => setTimeout(r, 2500));
+    const s = await fetch(`https://api.runpod.ai/v2/${EP}/status/${run.id}`, { headers: H }).then(r => r.json());
+    if (s.status === "COMPLETED") return s.output.url;
+    if (s.status === "FAILED") throw new Error(JSON.stringify(s));
+  }
+}
+
+const url = await renderClip(
+  { animationType: "concept_reveal", title: "Tools extend Claude" }, "tools.mp4");
+console.log("rendered:", url);
+```
+
+### From Python (requests) — submit + poll
+
+```python
+import os, time, requests
+
+EP = "s13kv6t2jg78lk"
+H = {"Authorization": f"Bearer {os.environ['RUNPOD_API_KEY']}", "Content-Type": "application/json"}
+
+def render_clip(props, out):
+    job = requests.post(f"https://api.runpod.ai/v2/{EP}/run",
+                        json={"input": {"props": props, "out": out}}, headers=H).json()
+    while True:
+        time.sleep(2.5)
+        s = requests.get(f"https://api.runpod.ai/v2/{EP}/status/{job['id']}", headers=H).json()
+        if s["status"] == "COMPLETED":
+            return s["output"]["url"]
+        if s["status"] == "FAILED":
+            raise RuntimeError(s)
+
+print(render_clip({"animationType": "timeline", "title": "Models",
+                   "milestones": [{"at": 20, "label": "Haiku"}, {"at": 80, "label": "Opus"}]}, "models.mp4"))
+```
+
+### Many clips at once
+
+To render a whole set, submit all jobs first, then poll them — RunPod runs them
+across its worker pool in parallel. [`runpod-submit.mjs`](./runpod-submit.mjs) is
+a ready-made batch submitter (reads a manifest, bounded concurrency, writes the
+result URLs to a JSON file).
+
+### Practical notes
+- **Cold start:** the first job after idle waits ~1–2 min while a worker pulls
+  the image. Keep **Min workers ≥ 1** for latency-sensitive apps.
+- **Don't ship the API key to browsers.** If your *frontend* needs clips, have
+  *your* backend call RunPod (key server-side) and hand the resulting URL to the
+  client — don't expose `RUNPOD_API_KEY` in client code.
+- **`out` controls the filename** in the bucket; the public URL is
+  `PUBLIC_BASE_URL/AZURE_PREFIX/<out>` (configured on the endpoint).
 
 ## 4. Point a renderer at the prebuilt `serveUrl` (skip bundling)
 
